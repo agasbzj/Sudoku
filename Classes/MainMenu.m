@@ -55,7 +55,7 @@
 		
 		CCMenu *mainMenu = [CCMenu menuWithItems:newGame, loadGame, gameSettings, quitGame, nil];
 		[mainMenu alignItemsVertically];
-		
+		mainMenu.position = ccp(160, 100);
 		[self addChild:mainMenu z:1 tag:2];
 		
 	}
