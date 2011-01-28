@@ -1,7 +1,7 @@
 Tcocos2d libraries
 v7
 r0
-t317726875.071218
+t317893063.976174
 cCheck dependencies
 cCompileC "build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/FontLabel.o" /Users/Agas/Documents/Projects/Sokokus/libs/FontLabel/FontLabel.m normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC "build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/FontLabelStringDrawing.o" /Users/Agas/Documents/Projects/Sokokus/libs/FontLabel/FontLabelStringDrawing.m normal i386 objective-c com.apple.compilers.llvmgcc42
@@ -298,400 +298,400 @@ t1287719363
 s74672
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/libcocos2d libraries.a
-t1295969926
+t1296199709
 s3961880
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCAction.o
-t1295969920
+t1296199709
 s47404
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCActionCamera.o
-t1295969920
+t1296199709
 s19716
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCActionEase.o
-t1295969920
+t1296199709
 s61164
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCActionGrid.o
-t1295969920
+t1296199709
 s50500
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCActionGrid3D.o
-t1295969921
+t1296199709
 s75672
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCActionInstant.o
-t1295969921
+t1296199709
 s55480
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCActionInterval.o
-t1295969921
+t1296199709
 s146656
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCActionManager.o
-t1295969921
+t1296199709
 s53764
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCActionPageTurn3D.o
-t1295969921
+t1296199709
 s8252
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCActionProgressTimer.o
-t1295969921
+t1296199709
 s15840
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCActionTiledGrid.o
-t1295969921
+t1296199709
 s78304
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCActionTween.o
-t1295969921
+t1296199709
 s11012
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCAnimation.o
-t1295969921
+t1296199709
 s24648
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCAnimationCache.o
-t1295969921
+t1296199709
 s12652
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCArray.o
-t1295969926
+t1296199709
 s40884
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCAtlasNode.o
-t1295969922
+t1296199709
 s28168
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCBlockSupport.o
-t1295969921
+t1296199709
 s4156
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCCamera.o
-t1295969922
+t1296199709
 s15812
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCCompatibility.o
-t1295969922
+t1296199709
 s2988
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCConfiguration.o
-t1295969922
+t1296199709
 s19952
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCDirector.o
-t1295969922
+t1296199709
 s81492
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCDirectorIOS.o
-t1295969925
+t1296199709
 s101968
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCDirectorMac.o
-t1295969926
+t1296199709
 s228
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCDrawingPrimitives.o
-t1295969922
+t1296199709
 s14712
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCEventDispatcher.o
-t1295969926
+t1296199709
 s228
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCFileUtils.o
-t1295969926
+t1296199709
 s14016
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCGrabber.o
-t1295969922
+t1296199709
 s9572
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCGrid.o
-t1295969922
+t1296199709
 s85404
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCLabelAtlas.o
-t1295969922
+t1296199709
 s20636
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCLabelBMFont.o
-t1295969922
+t1296199709
 s67492
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCLabelTTF.o
-t1295969922
+t1296199709
 s22180
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCLayer.o
-t1295969923
+t1296199709
 s87996
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCMenu.o
-t1295969923
+t1296199709
 s80312
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCMenuItem.o
-t1295969923
+t1296199709
 s101948
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCMotionStreak.o
-t1295969923
+t1296199709
 s19444
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCNode.o
-t1295969923
+t1296199709
 s125116
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCParallaxNode.o
-t1295969923
+t1296199709
 s29932
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCParticleExamples.o
-t1295969923
+t1296199709
 s59748
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCParticleSystem.o
-t1295969923
+t1296199709
 s120008
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCParticleSystemPoint.o
-t1295969923
+t1296199709
 s22504
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCParticleSystemQuad.o
-t1295969923
+t1296199709
 s28228
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCProfiling.o
-t1295969926
+t1296199709
 s228
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCProgressTimer.o
-t1295969923
+t1296199709
 s46512
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCRenderTexture.o
-t1295969923
+t1296199709
 s32708
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCRibbon.o
-t1295969924
+t1296199709
 s44152
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCScene.o
-t1295969924
+t1296199709
 s7776
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCScheduler.o
-t1295969924
+t1296199709
 s83360
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCSprite.o
-t1295969924
+t1296199709
 s112384
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCSpriteBatchNode.o
-t1295969924
+t1296199709
 s58572
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCSpriteFrame.o
-t1295969924
+t1296199709
 s22432
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCSpriteFrameCache.o
-t1295969924
+t1296199709
 s42236
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCSpriteSheet.o
-t1295969924
+t1296199709
 s4280
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTMXLayer.o
-t1295969925
+t1296199709
 s76804
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTMXObjectGroup.o
-t1295969925
+t1296199709
 s14916
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTMXTiledMap.o
-t1295969925
+t1296199709
 s33272
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTMXXMLParser.o
-t1295969925
+t1296199709
 s79472
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTexture2D.o
-t1295969924
+t1296199709
 s49780
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTextureAtlas.o
-t1295969924
+t1296199709
 s31892
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTextureCache.o
-t1295969924
+t1296199709
 s39828
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTexturePVR.o
-t1295969924
+t1296199709
 s25124
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTileMapAtlas.o
-t1295969925
+t1296199709
 s28884
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTouchDispatcher.o
-t1295969925
+t1296199709
 s68284
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTouchHandler.o
-t1295969925
+t1296199709
 s20776
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTransition.o
-t1295969925
+t1296199709
 s140716
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTransitionPageTurn.o
-t1295969925
+t1296199709
 s14860
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCTransitionRadial.o
-t1295969925
+t1296199709
 s17764
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CDAudioManager.o
-t1295969920
+t1296199709
 s95224
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CDOpenALSupport.o
-t1295969920
+t1296199709
 s10336
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CDataScanner.o
-t1295969919
+t1296199709
 s25200
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CDataScanner_Extensions.o
-t1295969919
+t1296199709
 s7068
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CGPointExtension.o
-t1295969926
+t1296199709
 s16576
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CJSONDeserializer.o
-t1295969919
+t1296199709
 s9880
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CJSONScanner.o
-t1295969919
+t1296199709
 s30364
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CJSONSerializer.o
-t1295969919
+t1296199709
 s19208
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CLScoreServerPost.o
-t1295969920
+t1296199709
 s36760
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CLScoreServerRequest.o
-t1295969920
+t1296199709
 s23556
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CocosDenshion.o
-t1295969920
+t1296199709
 s143060
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/EAGLView.o
-t1295969926
+t1296199709
 s64040
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/ES1Renderer.o
-t1295969926
+t1296199709
 s23528
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/FontLabel.o
-t1295969919
+t1296199709
 s56520
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/FontLabelStringDrawing.o
-t1295969919
+t1296199709
 s75668
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/FontManager.o
-t1295969919
+t1296199709
 s15004
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/MacGLView.o
-t1295969926
+t1296199709
 s228
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/NSCharacterSet_Extensions.o
-t1295969919
+t1296199709
 s4176
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/NSDictionary_JSONExtensions.o
-t1295969919
+t1296199709
 s4080
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/NSScanner_Extensions.o
-t1295969919
+t1296199709
 s11240
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/SimpleAudioEngine.o
-t1295969920
+t1296199709
 s31924
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/TGAlib.o
-t1295969926
+t1296199709
 s11472
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/TransformUtils.o
-t1295969926
+t1296199709
 s3040
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/ZAttributedString.o
-t1295969920
+t1296199709
 s96040
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/ZFont.o
-t1295969919
+t1296199709
 s23676
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/ZipUtils.o
-t1295969926
+t1296199709
 s13636
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/base64.o
-t1295969926
+t1296199709
 s5664
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/ccUtils.o
-t1295969926
+t1296199709
 s2128
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/cocos2d libraries.LinkFileList
-c000000004D3EEE7F0000000000003587
-t1295969919
+c000000004D42701D0000000000003587
+t1296199709
 s13703
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/cocos2d.o
-t1295969925
+t1296199709
 s2536
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/cocoslive.o
-t1295969920
+t1296199709
 s2556
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/glu.o
-t1295969926
+t1296199709
 s5288
 
 N/Users/Agas/Documents/Projects/Sokokus/libs/CocosDenshion/CDAudioManager.h
@@ -2552,7 +2552,7 @@ i<UIKit/UIKit.h>
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies317726875#317726875#0(0"0(0#1#0"8618317216#0"0#
+lSLF07#2@18"Check dependencies317893063#317893063#0(0"0(0#1#0"8620417504#0"0#
 
 CCompileC "build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/Objects-normal/i386/CCAction.o" /Users/Agas/Documents/Projects/Sokokus/libs/cocos2d/CCAction.m normal i386 objective-c com.apple.compilers.llvmgcc42
 s317662720.332366

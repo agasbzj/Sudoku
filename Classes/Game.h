@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-
+#import "Numbers.h"
 @interface Game : CCLayer {
 	NSArray *numberArray;
 	NSMutableArray *allData;

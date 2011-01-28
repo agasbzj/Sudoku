@@ -1,7 +1,7 @@
 TSokokus
 v7
 r0
-t317726875.548734
+t317893064.579693
 cCheck dependencies
 cProcessInfoPlistFile /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Info.plist Resources/Info.plist
 cCpResource build/Debug-iphonesimulator/Sokokus.app/Default.png Resources/Default.png
@@ -15,11 +15,9 @@ cCpResource build/Debug-iphonesimulator/Sokokus.app/Icon-72.png Resources/Icon-7
 cCpResource build/Debug-iphonesimulator/Sokokus.app/iTunesArtwork Resources/iTunesArtwork
 cCpResource build/Debug-iphonesimulator/Sokokus.app/menuView-hd.png Resources/menuView-hd.png
 cCpResource build/Debug-iphonesimulator/Sokokus.app/gameBackground-hd.png Resources/gameBackground-hd.png
-cCpResource build/Debug-iphonesimulator/Sokokus.app/gameGrid-hd.png Resources/gameGrid-hd.png
 cCpResource build/Debug-iphonesimulator/Sokokus.app/gameBack-hd.png Resources/gameBack-hd.png
 cCpResource build/Debug-iphonesimulator/Sokokus.app/gameBack.png Resources/gameBack.png
 cCpResource build/Debug-iphonesimulator/Sokokus.app/gameBackground.png Resources/gameBackground.png
-cCpResource build/Debug-iphonesimulator/Sokokus.app/gameGrid.png Resources/gameGrid.png
 cCpResource build/Debug-iphonesimulator/Sokokus.app/menuView.png Resources/menuView.png
 cCpResource build/Debug-iphonesimulator/Sokokus.app/gridBlue-hd.png Resources/gridBlue-hd.png
 cCpResource build/Debug-iphonesimulator/Sokokus.app/gridBlue.png Resources/gridBlue.png
@@ -50,6 +48,12 @@ cCpResource build/Debug-iphonesimulator/Sokokus.app/num8c.png Resources/Sodoku_N
 cCpResource build/Debug-iphonesimulator/Sokokus.app/num9a.png Resources/Sodoku_Numbers/num9a.png
 cCpResource build/Debug-iphonesimulator/Sokokus.app/num9b.png Resources/Sodoku_Numbers/num9b.png
 cCpResource build/Debug-iphonesimulator/Sokokus.app/num9c.png Resources/Sodoku_Numbers/num9c.png
+cCpResource build/Debug-iphonesimulator/Sokokus.app/GridStyle2-hd.png Resources/GridStyle2-hd.png
+cCpResource build/Debug-iphonesimulator/Sokokus.app/lose-hd.png Resources/lose-hd.png
+cCpResource build/Debug-iphonesimulator/Sokokus.app/new-hd.png Resources/new-hd.png
+cCpResource build/Debug-iphonesimulator/Sokokus.app/GridStyle2.png Resources/GridStyle2.png
+cCpResource build/Debug-iphonesimulator/Sokokus.app/lose.png Resources/lose.png
+cCpResource build/Debug-iphonesimulator/Sokokus.app/new.png Resources/new.png
 cProcessPCH /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch.gch Sokokus_Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/main.o /Users/Agas/Documents/Projects/Sokokus/main.m normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/SokokusAppDelegate.o /Users/Agas/Documents/Projects/Sokokus/Classes/SokokusAppDelegate.m normal i386 objective-c com.apple.compilers.llvmgcc42
@@ -57,6 +61,7 @@ cCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal
 cCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/GameLayer.o /Users/Agas/Documents/Projects/Sokokus/Classes/GameLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/MainMenu.o /Users/Agas/Documents/Projects/Sokokus/Classes/MainMenu.m normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Game.o /Users/Agas/Documents/Projects/Sokokus/Classes/Game.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Numbers.o /Users/Agas/Documents/Projects/Sokokus/Classes/Numbers.m normal i386 objective-c com.apple.compilers.llvmgcc42
 cLd /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus normal i386
 cGenerateDSYMFile /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app.dSYM /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus
 cTouch /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app
@@ -197,16 +202,17 @@ t1287719363
 s74672
 
 N/Users/Agas/Documents/Projects/Sokokus/Classes/Game.h
-c000000004D3EF7D1000000000000017D
-t1295972305
-s381
+c000000004D4271390000000000000190
+t1296199993
+s400
 i<Foundation/Foundation.h>
 i"cocos2d.h"
+i"Numbers.h"
 
 N/Users/Agas/Documents/Projects/Sokokus/Classes/Game.m
-c000000004D3FE9190000000000000CEA
-t1296034073
-s3306
+c000000004D4272460000000000000D1A
+t1296200262
+s3354
 i"Game.h"
 i"MainMenu.h"
 i"GameLayer.h"
@@ -217,15 +223,15 @@ t1295852998
 s561
 
 N/Users/Agas/Documents/Projects/Sokokus/Classes/GameLayer.h
-c000000004D3D338900000000000000E9
-t1295856521
+c000000004D4167DF00000000000000E9
+t1296132063
 s233
 i<Foundation/Foundation.h>
 i"cocos2d.h"
 
 N/Users/Agas/Documents/Projects/Sokokus/Classes/GameLayer.m
-c000000004D3E820100000000000006DE
-t1295942145
+c000000004D42701D00000000000006DE
+t1296199709
 s1758
 i"GameLayer.h"
 i"MainMenu.h"
@@ -244,6 +250,19 @@ t1295928958
 s2285
 i"MainMenu.h"
 i"GameLayer.h"
+
+N/Users/Agas/Documents/Projects/Sokokus/Classes/Numbers.h
+c000000004D427166000000000000022A
+t1296200038
+s554
+i<Foundation/Foundation.h>
+i"cocos2d.h"
+
+N/Users/Agas/Documents/Projects/Sokokus/Classes/Numbers.m
+c000000004D4271280000000000000B2A
+t1296199976
+s2858
+i"Numbers.h"
 
 N/Users/Agas/Documents/Projects/Sokokus/Classes/RootViewController.h
 c000000004D3D19AE00000000000000E6
@@ -279,6 +298,16 @@ N/Users/Agas/Documents/Projects/Sokokus/Resources/Default.png
 c000000004D3D19AE00000000000077AB
 t1295849902
 s30635
+
+N/Users/Agas/Documents/Projects/Sokokus/Resources/GridStyle2-hd.png
+c000000004D41237D0000000000001638
+t1296114557
+s5688
+
+N/Users/Agas/Documents/Projects/Sokokus/Resources/GridStyle2.png
+c000000004D41237D0000000000001638
+t1296114557
+s5688
 
 N/Users/Agas/Documents/Projects/Sokokus/Resources/Icon-72.png
 c000000004D3D19AE0000000000002C96
@@ -495,6 +524,16 @@ c000000004D3D19AE000000000000F21E
 t1295849902
 s61982
 
+N/Users/Agas/Documents/Projects/Sokokus/Resources/lose-hd.png
+c000000004D412B1A0000000000005E0A
+t1296116506
+s24074
+
+N/Users/Agas/Documents/Projects/Sokokus/Resources/lose.png
+c000000004D412B1A0000000000005E0A
+t1296116506
+s24074
+
 N/Users/Agas/Documents/Projects/Sokokus/Resources/menuView-hd.png
 c000000004D3E450A000000000004E3EC
 t1295926538
@@ -505,6 +544,16 @@ c000000004D3E450A000000000004E3EC
 t1295926538
 s320492
 
+N/Users/Agas/Documents/Projects/Sokokus/Resources/new-hd.png
+c000000004D412B2100000000000048CC
+t1296116513
+s18636
+
+N/Users/Agas/Documents/Projects/Sokokus/Resources/new.png
+c000000004D412B2100000000000048CC
+t1296116513
+s18636
+
 N/Users/Agas/Documents/Projects/Sokokus/Sokokus_Prefix.pch
 c000000004D3D19AE00000000000000B1
 t1295849902
@@ -513,241 +562,269 @@ i<Foundation/Foundation.h>
 i<UIKit/UIKit.h>
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app
-t1296034075
-s1734
+t1296200264
+s1938
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app.dSYM
-t1296034075
+t1296200264
 s102
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Default.png
-t1295969926
+t1296199709
 s30635
 
+N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/GridStyle2-hd.png
+t1296200239
+s5688
+
+N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/GridStyle2.png
+t1296200239
+s5688
+
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Icon-72.png
-t1295969926
+t1296199709
 s11414
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Icon-Small-50.png
-t1295969926
+t1296199709
 s7979
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Icon-Small.png
-t1295969926
+t1296199709
 s4956
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Icon-Small@2x.png
-t1295969926
+t1296199709
 s9465
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Icon.png
-t1295969926
+t1296199709
 s9327
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Icon@2x.png
-t1295969926
+t1296199709
 s21365
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Info.plist
-t1295969926
+t1296199709
 s820
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/PkgInfo
-t1295969926
+t1296199709
 s8
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus
-t1296034075
-s1654552
+t1296200264
+s1664948
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/fps_images.png
-t1295969926
+t1296199709
 s6203
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/gameBack-hd.png
-t1295969926
+t1296199976
 s575470
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/gameBack.png
-t1295969926
+t1296199976
 s575470
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/gameBackground-hd.png
-t1295969926
+t1296199976
 s685710
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/gameBackground.png
-t1295969926
+t1296199709
 s685710
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/gameGrid-hd.png
-t1295969926
+t1296199976
 s5017
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/gameGrid.png
-t1295969926
+t1296199976
 s5017
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/gridBlue-hd.png
-t1295969926
+t1296199976
 s107217
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/gridBlue.png
-t1295969926
+t1296199976
 s107217
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/iTunesArtwork
-t1295969926
+t1296199709
 s61982
 
+N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/lose-hd.png
+t1296200239
+s24074
+
+N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/lose.png
+t1296200239
+s24074
+
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/menuView-hd.png
-t1295969926
+t1296199976
 s320492
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/menuView.png
-t1295969926
+t1296199709
 s320492
 
+N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/new-hd.png
+t1296200239
+s18636
+
+N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/new.png
+t1296200239
+s18636
+
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num1a.png
-t1295969926
+t1296199976
 s3064
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num1b.png
-t1295969926
+t1296199976
 s3071
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num1c.png
-t1295969926
+t1296199976
 s3071
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num2a.png
-t1295969926
+t1296199976
 s3303
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num2b.png
-t1295969926
+t1296199976
 s3306
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num2c.png
-t1295969926
+t1296199976
 s3316
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num3a.png
-t1295969926
+t1296199976
 s3407
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num3b.png
-t1295969926
+t1296199976
 s3409
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num3c.png
-t1295969926
+t1296199976
 s3415
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num4a.png
-t1295969926
+t1296199976
 s3143
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num4b.png
-t1295969926
+t1296199976
 s3145
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num4c.png
-t1295969926
+t1296199976
 s3146
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num5a.png
-t1295969926
+t1296199976
 s3286
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num5b.png
-t1295969926
+t1296199976
 s3288
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num5c.png
-t1295969926
+t1296199976
 s3296
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num6a.png
-t1295969926
+t1296199976
 s3434
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num6b.png
-t1295969926
+t1296199976
 s3437
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num6c.png
-t1295969926
+t1296199976
 s3445
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num7a.png
-t1295969926
+t1296199976
 s3166
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num7b.png
-t1295969926
+t1296199976
 s3168
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num7c.png
-t1295969926
+t1296199976
 s3168
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num8a.png
-t1295969926
+t1296199976
 s3474
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num8b.png
-t1295969926
+t1296199976
 s3477
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num8c.png
-t1295969926
+t1296199976
 s3485
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num9a.png
-t1295969926
+t1296199976
 s3417
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num9b.png
-t1295969926
+t1296199976
 s3419
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/num9c.png
-t1295969926
+t1296199976
 s3429
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/libcocos2d libraries.a
-c000000004D3EEE8600000000003C7418
-t1295969926
+c000000004D42701D00000000003C7418
+t1296199709
 s3961880
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Game.o
-t1296034075
-s19484
+t1296200264
+s17780
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/GameLayer.o
-t1296030585
+t1296200040
 s17040
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/MainMenu.o
-t1295969927
+t1296199977
 s17584
 
+N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Numbers.o
+t1296200040
+s22912
+
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/RootViewController.o
-t1295969927
+t1296199977
 s43556
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Sokokus.LinkFileList
-c000000004D3EEE860000000000000301
-t1295969926
-s769
+c000000004D427128000000000000037E
+t1296199976
+s894
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/SokokusAppDelegate.o
-t1295969927
+t1296199977
 s59592
 
 N/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/main.o
-t1295969927
+t1296199977
 s3204
 
 N/Users/Agas/Documents/Projects/Sokokus/libs/cocos2d/CCAction.h
@@ -1484,7 +1561,7 @@ s350
 i<UIKit/UIKit.h>
 
 N/var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch.gch
-t1295969927
+t1296199976
 s11971792
 
 NResources/Info.plist
@@ -1494,11 +1571,11 @@ s1301
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies317726875#317726875#0(0"0(0#1#0"8624956416#0"0#
+lSLF07#2@18"Check dependencies317893063#317893064#0(0"0(0#1#0"8598173536#0"0#
 
 CCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Game.o /Users/Agas/Documents/Projects/Sokokus/Classes/Game.m normal i386 objective-c com.apple.compilers.llvmgcc42
-s317726875.086396
-e317726875.224957
+s317893064.009244
+e317893064.153766
 r1
 xCompileC
 xbuild/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Game.o
@@ -1507,11 +1584,11 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF07#2@61"Compile /Users/Agas/Documents/Projects/Sokokus/Classes/Game.m317726875#317726875#0(0"0(0#0#53"/Users/Agas/Documents/Projects/Sokokus/Classes/Game.m8623469152#2066"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/Classes/Game.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Game.o0#
+lSLF07#2@61"Compile /Users/Agas/Documents/Projects/Sokokus/Classes/Game.m317893064#317893064#0(0"0(0#0#53"/Users/Agas/Documents/Projects/Sokokus/Classes/Game.m8615794272#2066"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/Classes/Game.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Game.o0#
 
 CCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/GameLayer.o /Users/Agas/Documents/Projects/Sokokus/Classes/GameLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42
-s317723385.770327
-e317723385.922545
+s317892840.242438
+e317892840.374241
 r1
 xCompileC
 xbuild/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/GameLayer.o
@@ -1520,11 +1597,11 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF07#2@66"Compile /Users/Agas/Documents/Projects/Sokokus/Classes/GameLayer.m317723385#317723385#0(0"0(0#0#58"/Users/Agas/Documents/Projects/Sokokus/Classes/GameLayer.m8319674012924859392#2076"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/Classes/GameLayer.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/GameLayer.o0#
+lSLF07#2@66"Compile /Users/Agas/Documents/Projects/Sokokus/Classes/GameLayer.m317892840#317892840#0(0"0(0#0#58"/Users/Agas/Documents/Projects/Sokokus/Classes/GameLayer.m8618171904#2076"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/Classes/GameLayer.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/GameLayer.o0#
 
 CCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/MainMenu.o /Users/Agas/Documents/Projects/Sokokus/Classes/MainMenu.m normal i386 objective-c com.apple.compilers.llvmgcc42
-s317662727.318172
-e317662727.453851
+s317892777.011428
+e317892777.156675
 r1
 xCompileC
 xbuild/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/MainMenu.o
@@ -1533,11 +1610,24 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF07#2@65"Compile /Users/Agas/Documents/Projects/Sokokus/Classes/MainMenu.m317662727#317662727#0(0"0(0#0#57"/Users/Agas/Documents/Projects/Sokokus/Classes/MainMenu.m8603774080#2074"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/Classes/MainMenu.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/MainMenu.o0#
+lSLF07#2@65"Compile /Users/Agas/Documents/Projects/Sokokus/Classes/MainMenu.m317892777#317892777#0(0"0(0#0#57"/Users/Agas/Documents/Projects/Sokokus/Classes/MainMenu.m8616641760#2074"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/Classes/MainMenu.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/MainMenu.o0#
+
+CCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Numbers.o /Users/Agas/Documents/Projects/Sokokus/Classes/Numbers.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s317892840.251045
+e317892840.377535
+r1
+xCompileC
+xbuild/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Numbers.o
+x/Users/Agas/Documents/Projects/Sokokus/Classes/Numbers.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@64"Compile /Users/Agas/Documents/Projects/Sokokus/Classes/Numbers.m317892840#317892840#0(0"0(0#0#56"/Users/Agas/Documents/Projects/Sokokus/Classes/Numbers.m8618626240#2072"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/Classes/Numbers.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Numbers.o0#
 
 CCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/RootViewController.o /Users/Agas/Documents/Projects/Sokokus/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.llvmgcc42
-s317662727.264160
-e317662727.425644
+s317892776.956194
+e317892777.136378
 r1
 xCompileC
 xbuild/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/RootViewController.o
@@ -1546,11 +1636,11 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF07#2@75"Compile /Users/Agas/Documents/Projects/Sokokus/Classes/RootViewController.m317662727#317662727#0(0"0(0#0#67"/Users/Agas/Documents/Projects/Sokokus/Classes/RootViewController.m8604457184#2094"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/Classes/RootViewController.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/RootViewController.o0#
+lSLF07#2@75"Compile /Users/Agas/Documents/Projects/Sokokus/Classes/RootViewController.m317892776#317892777#0(0"0(0#0#67"/Users/Agas/Documents/Projects/Sokokus/Classes/RootViewController.m8614984288#2094"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/Classes/RootViewController.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/RootViewController.o0#
 
 CCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/SokokusAppDelegate.o /Users/Agas/Documents/Projects/Sokokus/Classes/SokokusAppDelegate.m normal i386 objective-c com.apple.compilers.llvmgcc42
-s317662727.262844
-e317662727.442617
+s317892776.955426
+e317892777.160338
 r1
 xCompileC
 xbuild/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/SokokusAppDelegate.o
@@ -1559,11 +1649,11 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF07#2@75"Compile /Users/Agas/Documents/Projects/Sokokus/Classes/SokokusAppDelegate.m317662727#317662727#0(0"0(0#0#67"/Users/Agas/Documents/Projects/Sokokus/Classes/SokokusAppDelegate.m8605732704#2094"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/Classes/SokokusAppDelegate.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/SokokusAppDelegate.o0#
+lSLF07#2@75"Compile /Users/Agas/Documents/Projects/Sokokus/Classes/SokokusAppDelegate.m317892776#317892777#0(0"0(0#0#67"/Users/Agas/Documents/Projects/Sokokus/Classes/SokokusAppDelegate.m8617070688#2094"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/Classes/SokokusAppDelegate.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/SokokusAppDelegate.o0#
 
 CCompileC build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/main.o /Users/Agas/Documents/Projects/Sokokus/main.m normal i386 objective-c com.apple.compilers.llvmgcc42
-s317662727.261422
-e317662727.318029
+s317892776.954570
+e317892777.011287
 r1
 xCompileC
 xbuild/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/main.o
@@ -1572,7 +1662,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF07#2@53"Compile /Users/Agas/Documents/Projects/Sokokus/main.m317662727#317662727#0(0"0(0#0#45"/Users/Agas/Documents/Projects/Sokokus/main.m8605978752#2058"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/main.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/main.o0#
+lSLF07#2@53"Compile /Users/Agas/Documents/Projects/Sokokus/main.m317892776#317892777#0(0"0(0#0#45"/Users/Agas/Documents/Projects/Sokokus/main.m8616466208#2058"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch -c /Users/Agas/Documents/Projects/Sokokus/main.m -o /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/main.o0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/Default.png Resources/Default.png
 s317662726.693660
@@ -1582,6 +1672,24 @@ xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/Default.png
 xResources/Default.png
 lSLF07#2@26"Copy Resources/Default.png317662726#317662726#0(0"0(0#0#60"/Users/Agas/Documents/Projects/Sokokus/Resources/Default.png8598762304#479"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Default.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+
+CCpResource build/Debug-iphonesimulator/Sokokus.app/GridStyle2-hd.png Resources/GridStyle2-hd.png
+s317893039.869504
+e317893039.955368
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/Sokokus.app/GridStyle2-hd.png
+xResources/GridStyle2-hd.png
+lSLF07#2@32"Copy Resources/GridStyle2-hd.png317893039#317893039#0(0"0(0#0#66"/Users/Agas/Documents/Projects/Sokokus/Resources/GridStyle2-hd.png8616283808#485"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/GridStyle2-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+
+CCpResource build/Debug-iphonesimulator/Sokokus.app/GridStyle2.png Resources/GridStyle2.png
+s317893039.872745
+e317893039.958015
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/Sokokus.app/GridStyle2.png
+xResources/GridStyle2.png
+lSLF07#2@29"Copy Resources/GridStyle2.png317893039#317893039#0(0"0(0#0#63"/Users/Agas/Documents/Projects/Sokokus/Resources/GridStyle2.png8615764480#482"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/GridStyle2.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/Icon-72.png Resources/Icon-72.png
 s317662726.700049
@@ -1647,31 +1755,31 @@ xResources/fps_images.png
 lSLF07#2@29"Copy Resources/fps_images.png317662726#317662726#0(0"0(0#0#63"/Users/Agas/Documents/Projects/Sokokus/Resources/fps_images.png8603128000#482"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/fps_images.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/gameBack-hd.png Resources/gameBack-hd.png
-s317662726.706598
-e317662726.721530
+s317892776.362937
+e317892776.391024
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/gameBack-hd.png
 xResources/gameBack-hd.png
-lSLF07#2@30"Copy Resources/gameBack-hd.png317662726#317662726#0(0"0(0#0#64"/Users/Agas/Documents/Projects/Sokokus/Resources/gameBack-hd.png8607016000#483"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gameBack-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@30"Copy Resources/gameBack-hd.png317892776#317892776#0(0"0(0#0#64"/Users/Agas/Documents/Projects/Sokokus/Resources/gameBack-hd.png8616225472#483"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gameBack-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/gameBack.png Resources/gameBack.png
-s317662726.709301
-e317662726.747447
+s317892776.363689
+e317892776.375765
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/gameBack.png
 xResources/gameBack.png
-lSLF07#2@27"Copy Resources/gameBack.png317662726#317662726#0(0"0(0#0#61"/Users/Agas/Documents/Projects/Sokokus/Resources/gameBack.png8606952192#480"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gameBack.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@27"Copy Resources/gameBack.png317892776#317892776#0(0"0(0#0#61"/Users/Agas/Documents/Projects/Sokokus/Resources/gameBack.png8616002240#480"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gameBack.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/gameBackground-hd.png Resources/gameBackground-hd.png
-s317662726.702869
-e317662726.721359
+s317892776.361520
+e317892776.374061
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/gameBackground-hd.png
 xResources/gameBackground-hd.png
-lSLF07#2@36"Copy Resources/gameBackground-hd.png317662726#317662726#0(0"0(0#0#70"/Users/Agas/Documents/Projects/Sokokus/Resources/gameBackground-hd.png8607136192#489"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gameBackground-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@36"Copy Resources/gameBackground-hd.png317892776#317892776#0(0"0(0#0#70"/Users/Agas/Documents/Projects/Sokokus/Resources/gameBackground-hd.png8616666528#489"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gameBackground-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/gameBackground.png Resources/gameBackground.png
 s317662726.710035
@@ -1683,40 +1791,40 @@ xResources/gameBackground.png
 lSLF07#2@33"Copy Resources/gameBackground.png317662726#317662726#0(0"0(0#0#67"/Users/Agas/Documents/Projects/Sokokus/Resources/gameBackground.png8606926304#486"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gameBackground.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/gameGrid-hd.png Resources/gameGrid-hd.png
-s317662726.704647
-e317662726.724944
+s317892776.362231
+e317892776.379529
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/gameGrid-hd.png
 xResources/gameGrid-hd.png
-lSLF07#2@30"Copy Resources/gameGrid-hd.png317662726#317662726#0(0"0(0#0#64"/Users/Agas/Documents/Projects/Sokokus/Resources/gameGrid-hd.png8607332064#483"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gameGrid-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@30"Copy Resources/gameGrid-hd.png317892776#317892776#0(0"0(0#0#64"/Users/Agas/Documents/Projects/Sokokus/Resources/gameGrid-hd.png8615235040#483"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gameGrid-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/gameGrid.png Resources/gameGrid.png
-s317662726.712691
-e317662726.731039
+s317892776.365543
+e317892776.387145
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/gameGrid.png
 xResources/gameGrid.png
-lSLF07#2@27"Copy Resources/gameGrid.png317662726#317662726#0(0"0(0#0#61"/Users/Agas/Documents/Projects/Sokokus/Resources/gameGrid.png8606773408#480"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gameGrid.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@27"Copy Resources/gameGrid.png317892776#317892776#0(0"0(0#0#61"/Users/Agas/Documents/Projects/Sokokus/Resources/gameGrid.png8616252480#480"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gameGrid.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/gridBlue-hd.png Resources/gridBlue-hd.png
-s317662726.721945
-e317662726.735667
+s317892776.367487
+e317892776.406304
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/gridBlue-hd.png
 xResources/gridBlue-hd.png
-lSLF07#2@30"Copy Resources/gridBlue-hd.png317662726#317662726#0(0"0(0#0#64"/Users/Agas/Documents/Projects/Sokokus/Resources/gridBlue-hd.png8607606688#483"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gridBlue-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@30"Copy Resources/gridBlue-hd.png317892776#317892776#0(0"0(0#0#64"/Users/Agas/Documents/Projects/Sokokus/Resources/gridBlue-hd.png8617068512#483"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gridBlue-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/gridBlue.png Resources/gridBlue.png
-s317662726.722732
-e317662726.736078
+s317892776.369391
+e317892776.382727
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/gridBlue.png
 xResources/gridBlue.png
-lSLF07#2@27"Copy Resources/gridBlue.png317662726#317662726#0(0"0(0#0#61"/Users/Agas/Documents/Projects/Sokokus/Resources/gridBlue.png8607512256#480"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gridBlue.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@27"Copy Resources/gridBlue.png317892776#317892776#0(0"0(0#0#61"/Users/Agas/Documents/Projects/Sokokus/Resources/gridBlue.png8617089440#480"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/gridBlue.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/iTunesArtwork Resources/iTunesArtwork
 s317662726.700806
@@ -1727,14 +1835,32 @@ xbuild/Debug-iphonesimulator/Sokokus.app/iTunesArtwork
 xResources/iTunesArtwork
 lSLF07#2@28"Copy Resources/iTunesArtwork317662726#317662726#0(0"0(0#0#62"/Users/Agas/Documents/Projects/Sokokus/Resources/iTunesArtwork8604564160#481"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/iTunesArtwork /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
+CCpResource build/Debug-iphonesimulator/Sokokus.app/lose-hd.png Resources/lose-hd.png
+s317893039.870267
+e317893039.956386
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/Sokokus.app/lose-hd.png
+xResources/lose-hd.png
+lSLF07#2@26"Copy Resources/lose-hd.png317893039#317893039#0(0"0(0#0#60"/Users/Agas/Documents/Projects/Sokokus/Resources/lose-hd.png8616136928#479"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/lose-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+
+CCpResource build/Debug-iphonesimulator/Sokokus.app/lose.png Resources/lose.png
+s317893039.873542
+e317893039.958862
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/Sokokus.app/lose.png
+xResources/lose.png
+lSLF07#2@23"Copy Resources/lose.png317893039#317893039#0(0"0(0#0#57"/Users/Agas/Documents/Projects/Sokokus/Resources/lose.png8615530240#476"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/lose.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+
 CCpResource build/Debug-iphonesimulator/Sokokus.app/menuView-hd.png Resources/menuView-hd.png
-s317662726.701509
-e317662726.725093
+s317892776.358181
+e317892776.373895
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/menuView-hd.png
 xResources/menuView-hd.png
-lSLF07#2@30"Copy Resources/menuView-hd.png317662726#317662726#0(0"0(0#0#64"/Users/Agas/Documents/Projects/Sokokus/Resources/menuView-hd.png8607229728#483"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/menuView-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@30"Copy Resources/menuView-hd.png317892776#317892776#0(0"0(0#0#64"/Users/Agas/Documents/Projects/Sokokus/Resources/menuView-hd.png30399800003068008#483"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/menuView-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/menuView.png Resources/menuView.png
 s317662726.719224
@@ -1745,267 +1871,285 @@ xbuild/Debug-iphonesimulator/Sokokus.app/menuView.png
 xResources/menuView.png
 lSLF07#2@27"Copy Resources/menuView.png317662726#317662726#0(0"0(0#0#61"/Users/Agas/Documents/Projects/Sokokus/Resources/menuView.png8606441824#480"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/menuView.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
+CCpResource build/Debug-iphonesimulator/Sokokus.app/new-hd.png Resources/new-hd.png
+s317893039.870962
+e317893039.955619
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/Sokokus.app/new-hd.png
+xResources/new-hd.png
+lSLF07#2@25"Copy Resources/new-hd.png317893039#317893039#0(0"0(0#0#59"/Users/Agas/Documents/Projects/Sokokus/Resources/new-hd.png8615924896#478"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/new-hd.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+
+CCpResource build/Debug-iphonesimulator/Sokokus.app/new.png Resources/new.png
+s317893039.874307
+e317893039.958446
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/Sokokus.app/new.png
+xResources/new.png
+lSLF07#2@22"Copy Resources/new.png317893039#317893039#0(0"0(0#0#56"/Users/Agas/Documents/Projects/Sokokus/Resources/new.png8615329024#475"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/new.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num1a.png Resources/Sodoku_Numbers/num1a.png
-s317662726.723445
-e317662726.740919
+s317892776.371704
+e317892776.397668
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num1a.png
 xResources/Sodoku_Numbers/num1a.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num1a.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num1a.png8607369056#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num1a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num1a.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num1a.png8616976064#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num1a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num1b.png Resources/Sodoku_Numbers/num1b.png
-s317662726.724119
-e317662726.747589
+s317892776.372622
+e317892776.400278
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num1b.png
 xResources/Sodoku_Numbers/num1b.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num1b.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num1b.png8607211712#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num1b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num1b.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num1b.png8616991936#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num1b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num1c.png Resources/Sodoku_Numbers/num1c.png
-s317662726.726692
-e317662726.740417
+s317892776.374156
+e317892776.394165
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num1c.png
 xResources/Sodoku_Numbers/num1c.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num1c.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num1c.png8606979904#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num1c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num1c.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num1c.png8616934496#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num1c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num2a.png Resources/Sodoku_Numbers/num2a.png
-s317662726.727595
-e317662726.741079
+s317892776.374952
+e317892776.403631
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num2a.png
 xResources/Sodoku_Numbers/num2a.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num2a.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num2a.png8606626400#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num2a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num2a.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num2a.png8616899936#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num2a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num2b.png Resources/Sodoku_Numbers/num2b.png
-s317662726.728532
-e317662726.740768
+s317892776.375856
+e317892776.413663
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num2b.png
 xResources/Sodoku_Numbers/num2b.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num2b.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num2b.png8606319328#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num2b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num2b.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num2b.png8616918560#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num2b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num2c.png Resources/Sodoku_Numbers/num2c.png
-s317662726.731152
-e317662726.740606
+s317892776.379650
+e317892776.413521
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num2c.png
 xResources/Sodoku_Numbers/num2c.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num2c.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num2c.png8605884832#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num2c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num2c.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num2c.png8616849344#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num2c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num3a.png Resources/Sodoku_Numbers/num3a.png
-s317662726.733319
-e317662726.747725
+s317892776.382824
+e317892776.406484
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num3a.png
 xResources/Sodoku_Numbers/num3a.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num3a.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num3a.png8604607520#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num3a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num3a.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num3a.png8616832224#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num3a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num3b.png Resources/Sodoku_Numbers/num3b.png
-s317662726.736191
-e317662726.747149
+s317892776.387254
+e317892776.413801
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num3b.png
 xResources/Sodoku_Numbers/num3b.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num3b.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num3b.png8604292512#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num3b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num3b.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num3b.png8616531296#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num3b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num3c.png Resources/Sodoku_Numbers/num3c.png
-s317662726.738229
-e317662726.747306
+s317892776.391136
+e317892776.427295
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num3c.png
 xResources/Sodoku_Numbers/num3c.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num3c.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num3c.png8604067296#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num3c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num3c.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num3c.png8616239488#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num3c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num4a.png Resources/Sodoku_Numbers/num4a.png
-s317662726.741183
-e317662726.751626
+s317892776.394288
+e317892776.413326
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num4a.png
 xResources/Sodoku_Numbers/num4a.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num4a.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num4a.png8598248576#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num4a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num4a.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num4a.png8616079296#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num4a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num4b.png Resources/Sodoku_Numbers/num4b.png
-s317662726.742566
-e317662726.751789
+s317892776.397827
+e317892776.413947
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num4b.png
 xResources/Sodoku_Numbers/num4b.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num4b.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num4b.png8595915712#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num4b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num4b.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num4b.png8616029472#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num4b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num4c.png Resources/Sodoku_Numbers/num4c.png
-s317662726.744651
-e317662726.751939
+s317892776.400528
+e317892776.427723
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num4c.png
 xResources/Sodoku_Numbers/num4c.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num4c.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num4c.png8607119520#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num4c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num4c.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num4c.png8615944672#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num4c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num5a.png Resources/Sodoku_Numbers/num5a.png
-s317662726.745457
-e317662726.757603
+s317892776.403772
+e317892776.427006
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num5a.png
 xResources/Sodoku_Numbers/num5a.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num5a.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num5a.png8607703488#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num5a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num5a.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num5a.png8615891584#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num5a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num5b.png Resources/Sodoku_Numbers/num5b.png
-s317662726.746311
-e317662726.755707
+s317892776.406617
+e317892776.427436
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num5b.png
 xResources/Sodoku_Numbers/num5b.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num5b.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num5b.png8607718752#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num5b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num5b.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num5b.png8615812416#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num5b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num5c.png Resources/Sodoku_Numbers/num5c.png
-s317662726.747811
-e317662726.761544
+s317892776.408696
+e317892776.427587
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num5c.png
 xResources/Sodoku_Numbers/num5c.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num5c.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num5c.png8607746080#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num5c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num5c.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num5c.png8615745344#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num5c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num6a.png Resources/Sodoku_Numbers/num6a.png
-s317662726.748533
-e317662726.754734
+s317892776.414039
+e317892776.426851
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num6a.png
 xResources/Sodoku_Numbers/num6a.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num6a.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num6a.png8607230304#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num6a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num6a.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num6a.png30399800003068008#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num6a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num6b.png Resources/Sodoku_Numbers/num6b.png
-s317662726.749246
-e317662726.758902
+s317892776.414837
+e317892776.427148
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num6b.png
 xResources/Sodoku_Numbers/num6b.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num6b.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num6b.png8605795424#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num6b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num6b.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num6b.png8615452928#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num6b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num6c.png Resources/Sodoku_Numbers/num6c.png
-s317662726.749949
-e317662726.765230
+s317892776.415571
+e317892776.436088
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num6c.png
 xResources/Sodoku_Numbers/num6c.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num6c.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num6c.png8609919968#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num6c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num6c.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num6c.png8615396448#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num6c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num7a.png Resources/Sodoku_Numbers/num7a.png
-s317662726.750649
-e317662726.766891
+s317892776.424591
+e317892776.434671
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num7a.png
 xResources/Sodoku_Numbers/num7a.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num7a.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num7a.png8607049408#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num7a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num7a.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num7a.png8615349952#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num7a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num7b.png Resources/Sodoku_Numbers/num7b.png
-s317662726.752023
-e317662726.764615
+s317892776.425866
+e317892776.434828
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num7b.png
 xResources/Sodoku_Numbers/num7b.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num7b.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num7b.png8607442528#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num7b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num7b.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num7b.png8615340896#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num7b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num7c.png Resources/Sodoku_Numbers/num7c.png
-s317662726.752744
-e317662726.768843
+s317892776.427805
+e317892776.435397
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num7c.png
 xResources/Sodoku_Numbers/num7c.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num7c.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num7c.png8606002592#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num7c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num7c.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num7c.png8615157120#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num7c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num8a.png Resources/Sodoku_Numbers/num8a.png
-s317662726.753445
-e317662726.770423
+s317892776.428558
+e317892776.442535
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num8a.png
 xResources/Sodoku_Numbers/num8a.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num8a.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num8a.png8605954624#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num8a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num8a.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num8a.png8615006080#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num8a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num8b.png Resources/Sodoku_Numbers/num8b.png
-s317662726.754824
-e317662726.765031
+s317892776.429365
+e317892776.439811
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num8b.png
 xResources/Sodoku_Numbers/num8b.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num8b.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num8b.png8601891936#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num8b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num8b.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num8b.png8614986784#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num8b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num8c.png Resources/Sodoku_Numbers/num8c.png
-s317662726.755792
-e317662726.769072
+s317892776.431533
+e317892776.440053
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num8c.png
 xResources/Sodoku_Numbers/num8c.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num8c.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num8c.png8605988256#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num8c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num8c.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num8c.png8616794368#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num8c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num9a.png Resources/Sodoku_Numbers/num9a.png
-s317662726.757707
-e317662726.764791
+s317892776.432318
+e317892776.442706
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num9a.png
 xResources/Sodoku_Numbers/num9a.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num9a.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num9a.png8605953952#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num9a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num9a.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num9a.png8616604544#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num9a.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num9b.png Resources/Sodoku_Numbers/num9b.png
-s317662726.758999
-e317662726.771469
+s317892776.433012
+e317892776.442931
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num9b.png
 xResources/Sodoku_Numbers/num9b.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num9b.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num9b.png8605979104#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num9b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num9b.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num9b.png8616404864#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num9b.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CCpResource build/Debug-iphonesimulator/Sokokus.app/num9c.png Resources/Sodoku_Numbers/num9c.png
-s317662726.761653
-e317662726.770822
+s317892776.433721
+e317892776.445475
 r1
 xCpResource
 xbuild/Debug-iphonesimulator/Sokokus.app/num9c.png
 xResources/Sodoku_Numbers/num9c.png
-lSLF07#2@39"Copy Resources/Sodoku_Numbers/num9c.png317662726#317662726#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num9c.png8603433344#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num9c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@39"Copy Resources/Sodoku_Numbers/num9c.png317892776#317892776#0(0"0(0#0#73"/Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num9c.png8616344512#492"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/Agas/Documents/Projects/Sokokus/Resources/Sodoku_Numbers/num9c.png /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
 CGenerateDSYMFile /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app.dSYM /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus
-s317726875.405263
-e317726875.546520
+s317893064.349723
+e317893064.576186
 r1
 xGenerateDSYMFile
 x/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app.dSYM
 x/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus
-lSLF07#2@109"GenerateDSYMFile build/Debug-iphonesimulator/Sokokus.app.dSYM build/Debug-iphonesimulator/Sokokus.app/Sokokus317726875#317726875#0(0"0(0#0#86"/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus8625150080#383"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus -o /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app.dSYM0#
+lSLF07#2@109"GenerateDSYMFile build/Debug-iphonesimulator/Sokokus.app.dSYM build/Debug-iphonesimulator/Sokokus.app/Sokokus317893064#317893064#0(0"0(0#0#86"/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus8616200192#383"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus -o /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app.dSYM0#
 
 CLd /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus normal i386
-s317726875.225039
-e317726875.405174
+s317893064.153843
+e317893064.349636
 r1
 xLd
 x/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus
 xnormal
 xi386
-lSLF07#2@91"Link /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus317726875#317726875#0(0"0(0#0#0"8624769472#1055"    cd /Users/Agas/Documents/Projects/Sokokus    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -filelist /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Sokokus.LinkFileList -mmacosx-version-min=10.6 -all_load -ObjC -Xlinker -objc_abi_version -Xlinker 2 -framework CoreGraphics -framework Foundation -framework OpenGLES -framework QuartzCore -framework UIKit -framework AudioToolbox -framework OpenAL -lz -framework AVFoundation "-lcocos2d libraries" -o /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus0#
+lSLF07#2@91"Link /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus317893064#317893064#0(0"0(0#0#0"8621646656#1055"    cd /Users/Agas/Documents/Projects/Sokokus    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -filelist /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/Sokokus.LinkFileList -mmacosx-version-min=10.6 -all_load -ObjC -Xlinker -objc_abi_version -Xlinker 2 -framework CoreGraphics -framework Foundation -framework OpenGLES -framework QuartzCore -framework UIKit -framework AudioToolbox -framework OpenAL -lz -framework AVFoundation "-lcocos2d libraries" -o /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Sokokus0#
 
 CProcessInfoPlistFile /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Info.plist Resources/Info.plist
 s317662726.689373
@@ -2017,8 +2161,8 @@ xResources/Info.plist
 lSLF07#2@28"Process Resources/Info.plist317662726#317662726#0(0"0(0#0#59"/Users/Agas/Documents/Projects/Sokokus/Resources/Info.plist8604455648#481"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Resources/Info.plist -genpkginfo /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app/Info.plist0#
 
 CProcessPCH /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch.gch Sokokus_Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42
-s317662726.771564
-e317662727.261163
+s317892776.445640
+e317892776.954463
 r1
 xProcessPCH
 x/var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch.gch
@@ -2027,13 +2171,13 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF07#2@29"Precompile Sokokus_Prefix.pch317662726#317662727#0(0"0(0#0#57"/Users/Agas/Documents/Projects/Sokokus/Sokokus_Prefix.pch8606517536#1950"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -c /Users/Agas/Documents/Projects/Sokokus/Sokokus_Prefix.pch -o /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch.gch0#
+lSLF07#2@29"Precompile Sokokus_Prefix.pch317892776#317892776#0(0"0(0#0#57"/Users/Agas/Documents/Projects/Sokokus/Sokokus_Prefix.pch8615690208#1950"    cd /Users/Agas/Documents/Projects/Sokokus    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -DCD_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-generated-files.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-own-target-headers.hmap -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-all-target-headers.hmap -iquote /Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus-project-headers.hmap -Wall -F/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator -I/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/include -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources/i386 -I/Users/Agas/Documents/Projects/Sokokus/build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/DerivedSources -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -c /Users/Agas/Documents/Projects/Sokokus/Sokokus_Prefix.pch -o /var/folders/+1/+1R9Z4ocGlm3bBfrXYGZzU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sokokus_Prefix-boepvtopngwoqpbogqoaicggknds/Sokokus_Prefix.pch.gch0#
 
 CTouch /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app
-s317726875.546607
-e317726875.548701
+s317893064.576339
+e317893064.579632
 r1
 xTouch
 x/Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app
-lSLF07#2@84"Touch /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app317726875#317726875#0(0"0(0#0#0"8624767168#278"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
+lSLF07#2@84"Touch /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app317893064#317893064#0(0"0(0#0#0"8615703904#278"    cd /Users/Agas/Documents/Projects/Sokokus    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/Agas/Documents/Projects/Sokokus/build/Debug-iphonesimulator/Sokokus.app0#
 
