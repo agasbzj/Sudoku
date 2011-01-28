@@ -13,8 +13,12 @@
 @implementation Game
 @synthesize numberArray;
 @synthesize allData;
-int correct[9][9];
+
+int correct[9][9]; //空格处正确的数字，其余为0
 int level = 4;	//难度
+
+CGPoint everyPoint[9][9];
+
 CCSprite *work;
 
 
@@ -28,7 +32,8 @@ CCSprite *work;
 		int rand9[9];
 	
 	
-	//初始模板数独
+
+//初始模板数独
 		int seedList[9][9] = {
 		{9,7,8,3,1,2,6,4,5},  
 		{3,1,2,6,4,5,9,7,8},  
@@ -41,7 +46,7 @@ CCSprite *work;
 		{5,6,4,8,9,7,2,3,1}  
 	};
 	
-	//生成1维随机数列
+//生成1维随机数列
 		for (i = 0; i < 9; ) {
 			temp = arc4random()%9 + 1;
 			for (j = 0; j < i; j++) 
@@ -60,7 +65,7 @@ CCSprite *work;
 	
 
 	
-	//生成数独阵
+//生成数独阵
 	
 		for (i = 0; i < 9; i++) {
 			for (j = 0; j < 9; j++) {
@@ -72,7 +77,7 @@ CCSprite *work;
 				}
 			}
 		}
-	//打印	
+//打印	
 		for (i = 0; i < 9; i++) 
 			for (j = 0; j < 9; j++){
 				printf("%d ", seedList[i][j]);
@@ -117,6 +122,7 @@ CCSprite *work;
 //正式加载游戏		
 		for (i = 0; i < 9; i++) {
 			for (j = 0; j < 9; j++) {
+				everyPoint[i][j] = ccp(x/2, y/2);//获取坐标
 				if (correct[i][j]) {x += 70; continue;}
 				one = [[firstGen.grayNumbers objectAtIndex:i] objectAtIndex:(seedList[i][j] - 1)];
 				one.positionInPixels = ccp(x, y);
@@ -225,29 +231,25 @@ CCSprite *work;
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	int i, j, t;
+	int i, j;
+	CGPoint inHere = CGPointMake(320, 480);
+	int positionAbs = 800;
 	UITouch *touch = [touches anyObject];
 	
 	CGPoint endLocation = [touch locationInView: [touch view]];
 	CGPoint finalLocation = [[CCDirector sharedDirector] convertToGL: endLocation];
 	
-	//CCNode *s = [self getChildByTag:1];
-	/*
 	for (i = 0; i < 9; i++) {
 		for (j = 0; j < 9; j++) {
-			if (missNumber[finalLocation.x/35][(finalLocation.y-102.5)/35]) {
-				CCSprite *movingOne = [[usingNumbers.greenNumbers objectAtIndex:useCount[selectedNumber - 1]] objectAtIndex:selectedNumber -1];
-				movingOne.position = ccp(finalLocation.x, finalLocation.y);
-				[self addChild:movingOne z:50];
-				t= useCount[selectedNumber - 1];
-				t++;
-				useCount[selectedNumber - 1] = t;
+			if ((abs(everyPoint[i][j].x - finalLocation.x) + abs(everyPoint[i][j].y - finalLocation.y)) < positionAbs) {
+				positionAbs = abs(everyPoint[i][j].x - finalLocation.x) + abs(everyPoint[i][j].y - finalLocation.y);
+				inHere = everyPoint[i][j];
 			}
 		}
 	}
-	*/
-	//[selectedNumber stopAllActions];
-	[work runAction:[CCScaleBy actionWithDuration:0.1 scale:1]];
+	[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
+	[work runAction:[CCMoveTo actionWithDuration:0 position:inHere]];
+	work = nil;
 	
 }
 

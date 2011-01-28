@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>C906FC4212F2EBC1000F340F</string>
+						<string>C906FC7E12F2F621000F340F</string>
 						<key>history</key>
 						<array>
-							<string>C906FC0812F2D490000F340F</string>
+							<string>C906FC7112F2F20B000F340F</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -235,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>219 128 829 750 0 0 1440 878 </string>
+				<string>263 128 829 750 0 0 1440 878 </string>
 			</dict>
 		</dict>
 		<dict>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>C906FC4312F2EBC1000F340F</string>
+						<string>C906FC7F12F2F621000F340F</string>
 						<key>history</key>
 						<array>
 							<string>C906FBEB12F2D3D1000F340F</string>
@@ -406,7 +406,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C906FC4112F2EBC1000F340F</string>
+										<string>C906FC7D12F2F621000F340F</string>
 										<key>history</key>
 										<array>
 											<string>C96ED8B912ED5A10008880BD</string>
@@ -647,8 +647,8 @@
 		<string>C906FBEE12F2D3D1000F340F</string>
 		<string>C96ED88D12ED5133008880BD</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>C906FBCD12F2D2B6000F340F</string>
 		<string>/Users/Agas/Documents/Projects/Sokokus/Sokokus.xcodeproj</string>
+		<string>C906FBCD12F2D2B6000F340F</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>C9F644C112F2B62C00124BD4</string>
 	</array>
@@ -828,10 +828,10 @@
 									<key>Frame</key>
 									<string>{{407, 0}, {485, 381}}</string>
 									<key>RubberWindowFrame</key>
-									<string>445 122 892 756 0 0 1440 878 </string>
+									<string>473 122 892 756 0 0 1440 878 </string>
 								</dict>
 								<key>RubberWindowFrame</key>
-								<string>445 122 892 756 0 0 1440 878 </string>
+								<string>473 122 892 756 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugSessionModule</string>
@@ -865,7 +865,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
 			<key>WindowString</key>
-			<string>445 122 892 756 0 0 1440 878 </string>
+			<string>473 122 892 756 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
