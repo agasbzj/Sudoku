@@ -15,18 +15,21 @@
 @synthesize allData;
 int correct[9][9];
 int level = 4;	//难度
+CCSprite *work;
+
 
 - (id) init {
 	if ((self = [super init])) {
-		
-	int i = 0, j = 0, k = 0, m = 0, temp = 0;
-	int x = 0, y = 0;
-	int flag = 0;
-	int rand9[9];
+		Numbers *firstGen = [Numbers node];
+		self.isTouchEnabled = YES;
+		int i = 0, j = 0, k = 0, m = 0, temp = 0;
+		int x = 0, y = 0;
+		int flag = 0;
+		int rand9[9];
 	
 	
 	//初始模板数独
-	int seedList[9][9] = {
+		int seedList[9][9] = {
 		{9,7,8,3,1,2,6,4,5},  
 		{3,1,2,6,4,5,9,7,8},  
 		{6,4,5,9,7,8,3,1,2},  
@@ -39,71 +42,70 @@ int level = 4;	//难度
 	};
 	
 	//生成1维随机数列
-	for (i = 0; i < 9; ) {
-		temp = arc4random()%9 + 1;
-		for (j = 0; j < i; j++) 
-			if (temp == rand9[j])
-			{
-				flag = 1;
-				break;
+		for (i = 0; i < 9; ) {
+			temp = arc4random()%9 + 1;
+			for (j = 0; j < i; j++) 
+				if (temp == rand9[j])
+				{
+					flag = 1;
+					break;
+				}
+			if (flag) {
+				flag = 0;
+				continue;
 			}
-		if (flag) {
-			flag = 0;
-			continue;
+			rand9[i] = temp;
+			i++;
 		}
-		rand9[i] = temp;
-		i++;
-	}
 	
-	//	for (i = 0; i < 9; i++)
-	//		printf("%d ", rand9[i]);
+
 	
 	//生成数独阵
 	
-	for (i = 0; i < 9; i++) {
-		for (j = 0; j < 9; j++) {
-			for (m = 0; m < 9; m++) {
-				if (seedList[i][j] == rand9[m]) {
-					seedList[i][j] = rand9[(m+1)%9];
-					break;
+		for (i = 0; i < 9; i++) {
+			for (j = 0; j < 9; j++) {
+				for (m = 0; m < 9; m++) {
+					if (seedList[i][j] == rand9[m]) {
+						seedList[i][j] = rand9[(m+1)%9];
+						break;
+					}
 				}
 			}
 		}
-	}
 	//打印	
-	for (i = 0; i < 9; i++) 
-		for (j = 0; j < 9; j++){
-			printf("%d ", seedList[i][j]);
-			if (j == 8) 
-				printf("\n");
-		}
+		for (i = 0; i < 9; i++) 
+			for (j = 0; j < 9; j++){
+				printf("%d ", seedList[i][j]);
+				if (j == 8) 
+					printf("\n");
+			}
 //按难度挖孔	
-	int a = 0, b = 0;
+		int a = 0, b = 0;
 	
-	for (i = 0; i < 9; i++) 
-		for (j = 0; j < 9; j++)
-			correct[i][j] = 0;
+		for (i = 0; i < 9; i++) 
+			for (j = 0; j < 9; j++)
+				correct[i][j] = 0;
 	
 //每行不超过level个孔	
-	for (i = 0; i < 9 ; i++) {
-		for (k = 0; k < level; k++) {
-			a = i;
-			b = arc4random()%9;
-			correct[a][b] = seedList[a][b];
+		for (i = 0; i < 9 ; i++) {
+			for (k = 0; k < level; k++) {
+				a = i;
+				b = arc4random()%9;
+				correct[a][b] = seedList[a][b];
 			
+			}
 		}
-	}
 	
-	
+//加载背景图案	
 		CCSprite *gameBack = [CCSprite spriteWithFile:@"gameBack.png"];
 		//gameBack.anchorPoint = CGPointZero;
 		gameBack.position = ccp(160, 240);
 		[self addChild:gameBack z:-100];
+//加载网格		
 		CCSprite *gameGrid = [CCSprite spriteWithFile:@"gridStyle2.png"];
 		gameGrid.positionInPixels = ccp(320, 520);
-		[self addChild:gameGrid z:-50];
+		[self addChild:gameGrid z:-50];		
 		
-		Numbers *firstGen = [Numbers node];
 
 		
 		x = 40;
@@ -178,6 +180,78 @@ int level = 4;	//难度
  }
  }
  */
+#pragma mark -
+#pragma mark Touches
+- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+
+	int theSelectedNumber;	//选中的数字
+	NSMutableArray *array;
+	UITouch *touch = [touches anyObject];
+	
+	CGPoint startPositon = [touch locationInView:[touch view]];
+	CGPoint convertedStartPosition = [[CCDirector sharedDirector] convertToGL:startPositon];
+	
+	if (convertedStartPosition.y > 431 && convertedStartPosition.y < 466) {
+		Numbers *firstGen = [Numbers node];
+		array = [firstGen createNumbers];
+		theSelectedNumber = convertedStartPosition.x / 35 + 1;
+		CCSprite *one = [[array objectAtIndex:1] objectAtIndex:theSelectedNumber - 1];
+		one.position = convertedStartPosition;
+		[self addChild:one];
+		[one stopAllActions];
+		[one runAction:[CCScaleBy actionWithDuration:0 scale:2.0]];
+		work = one;
+		
+	}
+	else {
+		return;
+	}
+
+		
+}
+
+
+- (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	UITouch *touch = [touches anyObject];
+	CGPoint currentPosition = [touch locationInView:[touch view]];
+	CGPoint convertedPosition = [[CCDirector sharedDirector] convertToGL:currentPosition];
+	//[selectedNumber stopAllActions];
+	//[selectedNumber runAction:[CCScaleBy actionWithDuration:0.1 scale:2.0]];
+	[work runAction:[CCMoveTo actionWithDuration:0 position:convertedPosition]];
+	
+}
+
+- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	int i, j, t;
+	UITouch *touch = [touches anyObject];
+	
+	CGPoint endLocation = [touch locationInView: [touch view]];
+	CGPoint finalLocation = [[CCDirector sharedDirector] convertToGL: endLocation];
+	
+	//CCNode *s = [self getChildByTag:1];
+	/*
+	for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
+			if (missNumber[finalLocation.x/35][(finalLocation.y-102.5)/35]) {
+				CCSprite *movingOne = [[usingNumbers.greenNumbers objectAtIndex:useCount[selectedNumber - 1]] objectAtIndex:selectedNumber -1];
+				movingOne.position = ccp(finalLocation.x, finalLocation.y);
+				[self addChild:movingOne z:50];
+				t= useCount[selectedNumber - 1];
+				t++;
+				useCount[selectedNumber - 1] = t;
+			}
+		}
+	}
+	*/
+	//[selectedNumber stopAllActions];
+	[work runAction:[CCScaleBy actionWithDuration:0.1 scale:1]];
+	
+}
+
+
 - (void) dealloc
 {
 	[super dealloc];

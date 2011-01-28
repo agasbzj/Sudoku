@@ -14,9 +14,13 @@
 	NSMutableArray *greenNumbers;
 	NSMutableArray *redNumbers;
 	NSArray *temp1;
+	NSMutableArray *controlNumbers;
 }
 @property (nonatomic, retain) NSMutableArray *grayNumbers;
 @property (nonatomic, retain) NSMutableArray *greenNumbers;
 @property (nonatomic, retain) NSMutableArray *redNumbers;
+@property (nonatomic, retain) NSMutableArray *controlNumbers;
 @property (nonatomic, retain) NSArray *temp1;
+
+- (NSMutableArray *) createNumbers;
 @end
