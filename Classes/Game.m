@@ -13,13 +13,17 @@
 @implementation Game
 @synthesize numberArray;
 @synthesize allData;
-int origin[9][9];
+int correct[9][9];
+int level = 4;	//难度
+
 - (id) init {
-	
-	int i = 0, j = 0, m = 0, temp = 0;
+	if ((self = [super init])) {
+		
+	int i = 0, j = 0, k = 0, m = 0, temp = 0;
 	int x = 0, y = 0;
 	int flag = 0;
 	int rand9[9];
+	
 	
 	//初始模板数独
 	int seedList[9][9] = {
@@ -73,52 +77,71 @@ int origin[9][9];
 			if (j == 8) 
 				printf("\n");
 		}
+//按难度挖孔	
+	int a = 0, b = 0;
 	
-	if ((self = [super init])) {
+	for (i = 0; i < 9; i++) 
+		for (j = 0; j < 9; j++)
+			correct[i][j] = 0;
+	
+//每行不超过level个孔	
+	for (i = 0; i < 9 ; i++) {
+		for (k = 0; k < level; k++) {
+			a = i;
+			b = arc4random()%9;
+			correct[a][b] = seedList[a][b];
+			
+		}
+	}
+	
+	
 		CCSprite *gameBack = [CCSprite spriteWithFile:@"gameBack.png"];
 		//gameBack.anchorPoint = CGPointZero;
 		gameBack.position = ccp(160, 240);
-		[self addChild:gameBack z:0 tag:1];
+		[self addChild:gameBack z:-100];
 		CCSprite *gameGrid = [CCSprite spriteWithFile:@"gridStyle2.png"];
 		gameGrid.positionInPixels = ccp(320, 520);
-		[self addChild:gameGrid z:1 tag:2];
-		/*		
-		 //把每个数字做成sprite放到一个array中		
-		 CCSprite *num1 = [CCSprite spriteWithFile:@"num1a.png"];
-		 CCSprite *num2 = [CCSprite spriteWithFile:@"num2a.png"];
-		 CCSprite *num3 = [CCSprite spriteWithFile:@"num3a.png"];
-		 CCSprite *num4 = [CCSprite spriteWithFile:@"num4a.png"];
-		 CCSprite *num5 = [CCSprite spriteWithFile:@"num5a.png"];
-		 CCSprite *num6 = [CCSprite spriteWithFile:@"num6a.png"];
-		 CCSprite *num7 = [CCSprite spriteWithFile:@"num7a.png"];
-		 CCSprite *num8 = [CCSprite spriteWithFile:@"num8a.png"];
-		 CCSprite *num9 = [CCSprite spriteWithFile:@"num9a.png"];
-		 numberArray = [NSArray arrayWithObjects:num1, num2, num3, num4, num5, num6, num7, num8, num9, nil];
-		 */
-		//Pixels		
+		[self addChild:gameGrid z:-50];
+		
 		Numbers *firstGen = [Numbers node];
-		[firstGen init];
+
 		
 		x = 40;
 		y = 800;
 		
 		CCSprite *one;
 		
-		//根据数独阵取array中的sprit，并放到当前layer上。
-		//这里最多只能到如此，内存不够？？？
-		//		for (i = 0; i < 1; i++) {
-		//			for (j = 0; j < 5; j++) {
-		//
+
+//正式加载游戏		
 		for (i = 0; i < 9; i++) {
 			for (j = 0; j < 9; j++) {
+				if (correct[i][j]) {x += 70; continue;}
 				one = [[firstGen.grayNumbers objectAtIndex:i] objectAtIndex:(seedList[i][j] - 1)];
 				one.positionInPixels = ccp(x, y);
-				[self addChild:one z:3];
+				[self addChild:one z:k+1];
 				x += 70;
 			}
 			x = 40;
 			y -= 70;
 		}
+		
+//顶部的操作用数字
+		x = 40;
+		for (i = 0; i < 9; i++) {
+			one = [[firstGen.redNumbers objectAtIndex:0] objectAtIndex:i];
+			one.positionInPixels = ccp(x, 898);
+			[self addChild:one z:3 tag:i+1];
+			x += 70;
+		}
+//底部的按钮		
+		CCSprite *renewButton = [CCSprite spriteWithFile:@"new.png"];
+		renewButton.positionInPixels = ccp(160, 102);
+		[self addChild:renewButton z:3 tag:13];
+		CCSprite *loseButton = [CCSprite spriteWithFile:@"lose.png"];
+		loseButton.positionInPixels = ccp(480, 102);
+		[self addChild:loseButton z:3 tag:14];
+		
+		
 	}
 	return self;
 }
