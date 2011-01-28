@@ -15,6 +15,7 @@
 @synthesize allData;
 
 int correct[9][9]; //空格处正确的数字，其余为0
+CCSprite *gridNumbers[9][9]; //空格处的sprite，保存了用户在相应位置填的数
 int level = 4;	//难度
 
 CGPoint everyPoint[9][9];
@@ -33,6 +34,7 @@ CCSprite *work;
 	
 	
 
+		
 //初始模板数独
 		int seedList[9][9] = {
 		{9,7,8,3,1,2,6,4,5},  
@@ -65,7 +67,7 @@ CCSprite *work;
 	
 
 	
-//生成数独阵
+//生成随机数独阵
 	
 		for (i = 0; i < 9; i++) {
 			for (j = 0; j < 9; j++) {
@@ -90,6 +92,13 @@ CCSprite *work;
 		for (i = 0; i < 9; i++) 
 			for (j = 0; j < 9; j++)
 				correct[i][j] = 0;
+		
+		for (i = 0; i < 9; i++) {
+			for (j = 0; j < 9; j++) {
+				gridNumbers[i][j] = nil;
+			}
+		}
+		
 	
 //每行不超过level个孔	
 		for (i = 0; i < 9 ; i++) {
@@ -153,39 +162,7 @@ CCSprite *work;
 	}
 	return self;
 }
-/*
- int checkOne(int one[][])
- {
- int i, j, m, n, flag;
- for (m = i, n = 0; n < 9 ; n++) 
- {
- if (n == j) continue;
- else if (temp == origin[m][n])
- {
- flag = 1;
- break;
- }
- }
- 
- if (!flag) 
- {
- for (n = j, m = 0; m < 9; m++) 
- {
- if (m == i) continue;
- else if (temp == origin[m][n])
- {
- flag = 1;
- break;
- }
- }
- }
- 
- if (!flag) 
- {
- 
- }
- }
- */
+
 #pragma mark -
 #pragma mark Touches
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -223,33 +200,54 @@ CCSprite *work;
 	UITouch *touch = [touches anyObject];
 	CGPoint currentPosition = [touch locationInView:[touch view]];
 	CGPoint convertedPosition = [[CCDirector sharedDirector] convertToGL:currentPosition];
-	//[selectedNumber stopAllActions];
-	//[selectedNumber runAction:[CCScaleBy actionWithDuration:0.1 scale:2.0]];
+	
 	[work runAction:[CCMoveTo actionWithDuration:0 position:convertedPosition]];
 	
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	int i, j;
+	int i, j, a, b;
 	CGPoint inHere = CGPointMake(320, 480);
 	int positionAbs = 800;
 	UITouch *touch = [touches anyObject];
 	
 	CGPoint endLocation = [touch locationInView: [touch view]];
 	CGPoint finalLocation = [[CCDirector sharedDirector] convertToGL: endLocation];
-	
+
+//查询最近的位置，使数字自动落在网格的中间	
 	for (i = 0; i < 9; i++) {
 		for (j = 0; j < 9; j++) {
 			if ((abs(everyPoint[i][j].x - finalLocation.x) + abs(everyPoint[i][j].y - finalLocation.y)) < positionAbs) {
 				positionAbs = abs(everyPoint[i][j].x - finalLocation.x) + abs(everyPoint[i][j].y - finalLocation.y);
 				inHere = everyPoint[i][j];
+				a = i;
+				b = j;
 			}
 		}
 	}
-	[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
-	[work runAction:[CCMoveTo actionWithDuration:0 position:inHere]];
-	work = nil;
+	NSLog(@"%d", correct[a][b]);
+//如果不是空格，数字不落下
+	if (correct[a][b] == 0) {
+		[self removeChild:work cleanup:YES];
+		work = nil;
+	}
+	else {
+//如果这个空格之前填了数字，先清除
+		if (gridNumbers[a][b]) {
+			[self removeChild:gridNumbers[a][b] cleanup:YES];
+		}
+		
+		gridNumbers[a][b] = work;
+		[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
+		[work runAction:[CCMoveTo actionWithDuration:0 position:inHere]];
+		work = nil;
+		
+
+		
+	}
+
+	
 	
 }
 
