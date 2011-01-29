@@ -20,9 +20,12 @@ CCSprite *gridNumbers[9][9]; //空格处的sprite，保存了用户在相应位�
 
 int selectedNumberTemp;
 
+int pointInLeft = 0, pointInRight = 0;	//是否点中左右两个按钮
+
 CGPoint everyPoint[9][9];
 
 CCSprite *work;
+
 
 
 - (id) init {
@@ -180,6 +183,9 @@ CCSprite *work;
 	CGPoint startPositon = [touch locationInView:[touch view]];
 	CGPoint convertedStartPosition = [[CCDirector sharedDirector] convertToGL:startPositon];
 	
+	pointInLeft = isInLeft(convertedStartPosition);
+	pointInRight= isInRight(convertedStartPosition);
+	
 	if (convertedStartPosition.y > 431 && convertedStartPosition.y < 466) {
 		Numbers *firstGen = [Numbers node];
 		array = [firstGen createNumbers];
@@ -206,8 +212,13 @@ CCSprite *work;
 	UITouch *touch = [touches anyObject];
 	CGPoint currentPosition = [touch locationInView:[touch view]];
 	CGPoint convertedPosition = [[CCDirector sharedDirector] convertToGL:currentPosition];
+	if (pointInLeft || pointInRight) {
+		return;
+	}
+	else if (work) {
+		[work runAction:[CCMoveTo actionWithDuration:0 position:convertedPosition]];
+	}
 	
-	[work runAction:[CCMoveTo actionWithDuration:0 position:convertedPosition]];
 	
 }
 
@@ -220,48 +231,74 @@ CCSprite *work;
 	
 	CGPoint endLocation = [touch locationInView: [touch view]];
 	CGPoint finalLocation = [[CCDirector sharedDirector] convertToGL: endLocation];
-
-//查询最近的位置，使数字自动落在网格的中间	
-	for (i = 0; i < 9; i++) {
-		for (j = 0; j < 9; j++) {
-			if ((abs(everyPoint[i][j].x - finalLocation.x) + abs(everyPoint[i][j].y - finalLocation.y)) < positionAbs) {
-				positionAbs = abs(everyPoint[i][j].x - finalLocation.x) + abs(everyPoint[i][j].y - finalLocation.y);
-				inHere = everyPoint[i][j];
-				a = i;
-				b = j;
-			}
+	
+	i = isInLeft(finalLocation);
+	j = isInRight(finalLocation);
+	
+	if ((pointInLeft && i) || (pointInRight && j)) {
+		if (i) {
+			CCScene *selectDiff = [CCScene node];
+			[selectDiff addChild:[GameLayer node]];
+			[[CCDirector sharedDirector] replaceScene:selectDiff];
+			
 		}
-	}
-	NSLog(@"%d", correct[a][b]);
-//如果不是空格，数字不落下
-	if (correct[a][b] == 0) {
-		[self removeChild:work cleanup:YES];
-		work = nil;
+		else {
+			CCScene *selectDiff = [CCScene node];
+			[selectDiff addChild:[MainMenu node]];
+			[[CCDirector sharedDirector] replaceScene:selectDiff];
+		}
+
 	}
 	else {
-//如果这个空格之前填了数字，先清除
-		if (gridNumbers[a][b]) {
-			[self removeChild:gridNumbers[a][b] cleanup:YES];
+		//查询最近的位置，使数字自动落在网格的中间	
+		for (i = 0; i < 9; i++) {
+			for (j = 0; j < 9; j++) {
+				if ((abs(everyPoint[i][j].x - finalLocation.x) + abs(everyPoint[i][j].y - finalLocation.y)) < positionAbs) {
+					positionAbs = abs(everyPoint[i][j].x - finalLocation.x) + abs(everyPoint[i][j].y - finalLocation.y);
+					inHere = everyPoint[i][j];
+					a = i;
+					b = j;
+				}
+			}
 		}
-		doing[a][b] = selectedNumberTemp;
-		gridNumbers[a][b] = work;
-		[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
-		[work runAction:[CCMoveTo actionWithDuration:0 position:inHere]];
-		work = nil;
+		NSLog(@"%d", correct[a][b]);
+		//如果不是空格，数字不落下
+		if (correct[a][b] == 0) {
+			[self removeChild:work cleanup:YES];
+			work = nil;
+		}
+		else {
+			//如果这个空格之前填了数字，先清除
+			if (gridNumbers[a][b]) {
+				[self removeChild:gridNumbers[a][b] cleanup:YES];
+			}
+			doing[a][b] = selectedNumberTemp;
+			gridNumbers[a][b] = work;
+			[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
+			[work runAction:[CCMoveTo actionWithDuration:0 position:inHere]];
+			work = nil;
+			
+			
+			
+		}
+		for (i = 0; i < 9; i++) 
+			for (j = 0; j < 9; j++){
+				printf("%d ", doing[i][j]);
+				if (j == 8) 
+					printf("\n");
+			}
+		//如果玩家填的数字全部正确，则执行
+		if (checkThemAll(doing, correct)) {
+			NSLog(@"win");
+			CCSprite *win = [CCSprite spriteWithFile:@"gaoding.png"];
+			win.positionInPixels = ccp(320, 480);
+			[win runAction:[CCRotateBy actionWithDuration:0 angle:30]];
+			[self addChild:win z:1000];
+			
+		}
 		
+	}
 
-		
-	}
-	for (i = 0; i < 9; i++) 
-		for (j = 0; j < 9; j++){
-			printf("%d ", doing[i][j]);
-			if (j == 8) 
-				printf("\n");
-		}
-//如果玩家填的数字全部正确，则执行
-	if (checkThemAll(doing, correct)) {
-		NSLog(@"win");
-	}
 	
 	
 }
@@ -285,6 +322,23 @@ int checkThemAll(int user[9][9], int right[9][9])
 	return win;
 }
 
+int isInLeft(CGPoint point)
+{
+	int flag = 0;
+	if (point.y > 19 && point.y < 83 && point.x > 30 && point.x < 129) {
+		flag = 1;
+	}
+	return flag;
+}
+
+int isInRight(CGPoint point)
+{
+	int flag = 0;
+	if (point.y > 19 && point.y < 83 && point.x > 190 && point.x < 289) {
+		flag = 1;
+	}
+	return flag;
+}
 
 - (void) dealloc
 {
