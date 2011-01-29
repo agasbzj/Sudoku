@@ -9,14 +9,16 @@
 #import "Game.h"
 #import "MainMenu.h"
 #import "GameLayer.h"
-
+#define GAME_LEVEL  1	//难度
 @implementation Game
 @synthesize numberArray;
 @synthesize allData;
 
 int correct[9][9]; //空格处正确的数字，其余为0
+int doing[9][9];	//玩家正在做的数组
 CCSprite *gridNumbers[9][9]; //空格处的sprite，保存了用户在相应位置填的数
-int level = 4;	//难度
+
+int selectedNumberTemp;
 
 CGPoint everyPoint[9][9];
 
@@ -88,10 +90,13 @@ CCSprite *work;
 			}
 //按难度挖孔	
 		int a = 0, b = 0;
-	
+//初始化	
 		for (i = 0; i < 9; i++) 
 			for (j = 0; j < 9; j++)
+			{
 				correct[i][j] = 0;
+				doing[i][j] = 0;
+			}
 		
 		for (i = 0; i < 9; i++) {
 			for (j = 0; j < 9; j++) {
@@ -102,7 +107,7 @@ CCSprite *work;
 	
 //每行不超过level个孔	
 		for (i = 0; i < 9 ; i++) {
-			for (k = 0; k < level; k++) {
+			for (k = 0; k < GAME_LEVEL; k++) {
 				a = i;
 				b = arc4random()%9;
 				correct[a][b] = seedList[a][b];
@@ -178,7 +183,8 @@ CCSprite *work;
 	if (convertedStartPosition.y > 431 && convertedStartPosition.y < 466) {
 		Numbers *firstGen = [Numbers node];
 		array = [firstGen createNumbers];
-		theSelectedNumber = convertedStartPosition.x / 35 + 1;
+		theSelectedNumber = convertedStartPosition.x / 35 + 1;	//选中的数字
+		selectedNumberTemp = theSelectedNumber;
 		CCSprite *one = [[array objectAtIndex:1] objectAtIndex:theSelectedNumber - 1];
 		one.position = convertedStartPosition;
 		[self addChild:one];
@@ -208,7 +214,7 @@ CCSprite *work;
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	int i, j, a, b;
-	CGPoint inHere = CGPointMake(320, 480);
+	CGPoint inHere = CGPointMake(320, 480);	//最终落子点（修正）
 	int positionAbs = 800;
 	UITouch *touch = [touches anyObject];
 	
@@ -237,7 +243,7 @@ CCSprite *work;
 		if (gridNumbers[a][b]) {
 			[self removeChild:gridNumbers[a][b] cleanup:YES];
 		}
-		
+		doing[a][b] = selectedNumberTemp;
 		gridNumbers[a][b] = work;
 		[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
 		[work runAction:[CCMoveTo actionWithDuration:0 position:inHere]];
@@ -246,9 +252,37 @@ CCSprite *work;
 
 		
 	}
+	for (i = 0; i < 9; i++) 
+		for (j = 0; j < 9; j++){
+			printf("%d ", doing[i][j]);
+			if (j == 8) 
+				printf("\n");
+		}
+//如果玩家填的数字全部正确，则执行
+	if (checkThemAll(doing, correct)) {
+		NSLog(@"win");
+	}
+	
+	
+}
 
-	
-	
+
+//查看完成的数组是否正确
+int checkThemAll(int user[9][9], int right[9][9])
+{
+	int i = 0, j = 0, win = 1;
+	for (i = 0;	i < 9; i++) {
+		for (j = 0; j < 9; j++) {
+			if (right[i][j] == 0) 
+				continue;
+			else 
+				if (user[i][j] != right[i][j]) {
+					win = 0;
+					break;
+				}
+		}
+	}
+	return win;
 }
 
 
