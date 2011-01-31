@@ -409,6 +409,7 @@
 		C9F6440212F2A9AE00124BD4 /* GridStyle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GridStyle2.png; sourceTree = "<group>"; };
 		C9F6440312F2A9AE00124BD4 /* lose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lose.png; sourceTree = "<group>"; };
 		C9F6440412F2A9AE00124BD4 /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
+		C9FE60AC12F66F5E00C037FA /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -693,6 +694,7 @@
 				C9748A5C12EEABD400D43894 /* Game.m */,
 				C9F643C212F2A82F00124BD4 /* Numbers.h */,
 				C9F643C312F2A82F00124BD4 /* Numbers.m */,
+				C9FE60AC12F66F5E00C037FA /* Data.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

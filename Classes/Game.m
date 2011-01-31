@@ -9,13 +9,15 @@
 #import "Game.h"
 #import "MainMenu.h"
 #import "GameLayer.h"
+#import "Data.h"
 #define GAME_LEVEL  1	//难度
-@implementation Game
-@synthesize numberArray;
-@synthesize allData;
 
-int correct[9][9]; //空格处正确的数字，其余为0
-int doing[9][9];	//玩家正在做的数组
+@implementation Game
+
+
+//int correct[9][9]; //空格处正确的数字，其余为0
+
+//int doing[9][9];	//玩家正在做的数组
 CCSprite *gridNumbers[9][9]; //空格处的sprite，保存了用户在相应位置填的数
 
 int selectedNumberTemp;
@@ -27,10 +29,17 @@ CGPoint everyPoint[9][9];
 CCSprite *work;
 
 
+Data gameData;
+
+
+
 
 - (id) init {
 	if ((self = [super init])) {
+		
 		Numbers *firstGen = [Numbers node];
+		//Data *gameData = [Game node];
+		
 		self.isTouchEnabled = YES;
 		int i = 0, j = 0, k = 0, m = 0, temp = 0;
 		int x = 0, y = 0;
@@ -84,21 +93,32 @@ CCSprite *work;
 				}
 			}
 		}
+		
+		for (i = 0; i < 9; i++) {
+			for (j = 0; j < 9; j++) {
+				gameData.originalGenerated[i][j] = seedList[i][j];
+			}
+		}
 //打印	
 		for (i = 0; i < 9; i++) 
 			for (j = 0; j < 9; j++){
-				printf("%d ", seedList[i][j]);
+				printf("%d ", gameData.originalGenerated[i][j]);
 				if (j == 8) 
 					printf("\n");
 			}
+		printf("\n");
 //按难度挖孔	
 		int a = 0, b = 0;
 //初始化	
 		for (i = 0; i < 9; i++) 
 			for (j = 0; j < 9; j++)
 			{
-				correct[i][j] = 0;
-				doing[i][j] = 0;
+				//correct[i][j] = 0;
+				
+				gameData.correct[i][j] = 0;
+				//doing[i][j] = 0;
+				
+				gameData.doing[i][j] = 0;
 			}
 		
 		for (i = 0; i < 9; i++) {
@@ -113,16 +133,20 @@ CCSprite *work;
 			for (k = 0; k < GAME_LEVEL; k++) {
 				a = i;
 				b = arc4random()%9;
-				correct[a][b] = seedList[a][b];
+//				correct[a][b] = seedList[a][b];
+
+				gameData.correct[a][b] = seedList[a][b];
 			
 			}
 		}
 	
 //加载背景图案	
+		/*
 		CCSprite *gameBack = [CCSprite spriteWithFile:@"gameBack.png"];
 		//gameBack.anchorPoint = CGPointZero;
 		gameBack.position = ccp(160, 240);
 		[self addChild:gameBack z:-100];
+		 */
 //加载网格		
 		CCSprite *gameGrid = [CCSprite spriteWithFile:@"gridStyle2.png"];
 		gameGrid.positionInPixels = ccp(320, 520);
@@ -140,8 +164,8 @@ CCSprite *work;
 		for (i = 0; i < 9; i++) {
 			for (j = 0; j < 9; j++) {
 				everyPoint[i][j] = ccp(x/2, y/2);//获取坐标
-				if (correct[i][j]) {x += 70; continue;}
-				one = [[firstGen.grayNumbers objectAtIndex:i] objectAtIndex:(seedList[i][j] - 1)];
+				if (gameData.correct[i][j] != 0) {x += 70; continue;}
+				one = [[firstGen.greenNumbers objectAtIndex:i] objectAtIndex:(seedList[i][j] - 1)];
 				one.positionInPixels = ccp(x, y);
 				[self addChild:one z:k+1];
 				x += 70;
@@ -156,6 +180,8 @@ CCSprite *work;
 			one = [[firstGen.redNumbers objectAtIndex:0] objectAtIndex:i];
 			one.positionInPixels = ccp(x, 898);
 			[self addChild:one z:3 tag:i+1];
+//			id waves = [CCWaves actionWithWaves:5 amplitude:20 horizontal:YES vertical:NO grid:ccg(35, 35) duration:100];
+//			[one runAction:[CCRepeatForever actionWithAction:waves]];
 			x += 70;
 		}
 //底部的按钮		
@@ -183,9 +209,11 @@ CCSprite *work;
 	CGPoint startPositon = [touch locationInView:[touch view]];
 	CGPoint convertedStartPosition = [[CCDirector sharedDirector] convertToGL:startPositon];
 	
+//检测点击的是否是按钮		
 	pointInLeft = isInLeft(convertedStartPosition);
 	pointInRight= isInRight(convertedStartPosition);
 	
+
 	if (convertedStartPosition.y > 431 && convertedStartPosition.y < 466) {
 		Numbers *firstGen = [Numbers node];
 		array = [firstGen createNumbers];
@@ -235,6 +263,7 @@ CCSprite *work;
 	i = isInLeft(finalLocation);
 	j = isInRight(finalLocation);
 	
+//点击了按钮，则执行相应任务	
 	if ((pointInLeft && i) || (pointInRight && j)) {
 		if (i) {
 			CCScene *selectDiff = [CCScene node];
@@ -261,9 +290,9 @@ CCSprite *work;
 				}
 			}
 		}
-		NSLog(@"%d", correct[a][b]);
+		NSLog(@"%d", gameData.correct[a][b]);
 		//如果不是空格，数字不落下
-		if (correct[a][b] == 0) {
+		if (gameData.correct[a][b] == 0) {
 			[self removeChild:work cleanup:YES];
 			work = nil;
 		}
@@ -272,7 +301,8 @@ CCSprite *work;
 			if (gridNumbers[a][b]) {
 				[self removeChild:gridNumbers[a][b] cleanup:YES];
 			}
-			doing[a][b] = selectedNumberTemp;
+			//doing[a][b] = selectedNumberTemp;
+			gameData.doing[a][b] = selectedNumberTemp;
 			gridNumbers[a][b] = work;
 			[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
 			[work runAction:[CCMoveTo actionWithDuration:0 position:inHere]];
@@ -283,12 +313,12 @@ CCSprite *work;
 		}
 		for (i = 0; i < 9; i++) 
 			for (j = 0; j < 9; j++){
-				printf("%d ", doing[i][j]);
+				printf("%d ", gameData.doing[i][j]);
 				if (j == 8) 
 					printf("\n");
 			}
 		//如果玩家填的数字全部正确，则执行
-		if (checkThemAll(doing, correct)) {
+		if (checkThemAll(gameData.doing, gameData.correct)) {
 			NSLog(@"win");
 			CCSprite *win = [CCSprite spriteWithFile:@"gaoding.png"];
 			win.positionInPixels = ccp(320, 480);

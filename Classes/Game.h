@@ -10,13 +10,9 @@
 #import "cocos2d.h"
 #import "Numbers.h"
 @interface Game : CCLayer {
-	NSArray *numberArray;
-	NSMutableArray *allData;
 
-	
 }
 
-@property (nonatomic, retain) NSArray *numberArray;
-@property (nonatomic, retain) NSMutableArray *allData;
+
 
 @end

@@ -65,10 +65,6 @@
 	controlNumbers = numbers;
 	return controlNumbers;
 }
--(void) registerWithTouchDispatcher
-{
-	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-}
 
 
 
