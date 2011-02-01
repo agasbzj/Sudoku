@@ -10,7 +10,7 @@
 #import "MainMenu.h"
 #import "GameLayer.h"
 #import "Data.h"
-#define GAME_LEVEL  1	//难度
+#define GAME_LEVEL  12	//难度
 
 @implementation Game
 
@@ -180,8 +180,6 @@ Data gameData;
 			one = [[firstGen.redNumbers objectAtIndex:0] objectAtIndex:i];
 			one.positionInPixels = ccp(x, 898);
 			[self addChild:one z:3 tag:i+1];
-//			id waves = [CCWaves actionWithWaves:5 amplitude:20 horizontal:YES vertical:NO grid:ccg(35, 35) duration:100];
-//			[one runAction:[CCRepeatForever actionWithAction:waves]];
 			x += 70;
 		}
 //底部的按钮		
