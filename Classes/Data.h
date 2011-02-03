@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef struct{
+	float check;
+	int gameActive;
 	int originalGenerated[9][9];	//原始生成的数独
 	int correct[9][9];	//空格处正确的数字，其余为0
 	int doing[9][9];	//玩家正在做的数组
