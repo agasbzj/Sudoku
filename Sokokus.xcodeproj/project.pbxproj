@@ -110,6 +110,7 @@
 		C9F6440512F2A9AE00124BD4 /* GridStyle2.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F6440212F2A9AE00124BD4 /* GridStyle2.png */; };
 		C9F6440612F2A9AE00124BD4 /* lose.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F6440312F2A9AE00124BD4 /* lose.png */; };
 		C9F6440712F2A9AE00124BD4 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F6440412F2A9AE00124BD4 /* new.png */; };
+		C9F7ECB812FAF5ED000CB49C /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F7ECB712FAF5ED000CB49C /* GameData.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -409,7 +410,8 @@
 		C9F6440212F2A9AE00124BD4 /* GridStyle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GridStyle2.png; sourceTree = "<group>"; };
 		C9F6440312F2A9AE00124BD4 /* lose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lose.png; sourceTree = "<group>"; };
 		C9F6440412F2A9AE00124BD4 /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
-		C9FE60AC12F66F5E00C037FA /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		C9F7ECB712FAF5ED000CB49C /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
+		C9FE60AC12F66F5E00C037FA /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -686,15 +688,16 @@
 				E0F80F5F120A0182005866B8 /* RootViewController.m */,
 				1F3B9A2C0EF2145700286867 /* SokokusAppDelegate.h */,
 				1F3B9A2B0EF2145700286867 /* SokokusAppDelegate.m */,
-				C96ED93D12ED608D008880BD /* GameLayer.h */,
-				C96ED93E12ED608D008880BD /* GameLayer.m */,
 				C96ED9C912EE6492008880BD /* MainMenu.h */,
 				C96ED9CA12EE6492008880BD /* MainMenu.m */,
+				C96ED93D12ED608D008880BD /* GameLayer.h */,
+				C96ED93E12ED608D008880BD /* GameLayer.m */,
 				C9748A5B12EEABD400D43894 /* Game.h */,
 				C9748A5C12EEABD400D43894 /* Game.m */,
 				C9F643C212F2A82F00124BD4 /* Numbers.h */,
 				C9F643C312F2A82F00124BD4 /* Numbers.m */,
-				C9FE60AC12F66F5E00C037FA /* Data.h */,
+				C9FE60AC12F66F5E00C037FA /* GameData.h */,
+				C9F7ECB712FAF5ED000CB49C /* GameData.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1331,6 +1334,7 @@
 				C96ED9CB12EE6492008880BD /* MainMenu.m in Sources */,
 				C9748A5D12EEABD400D43894 /* Game.m in Sources */,
 				C9F643C412F2A82F00124BD4 /* Numbers.m in Sources */,
+				C9F7ECB812FAF5ED000CB49C /* GameData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

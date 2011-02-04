@@ -12,12 +12,14 @@
 #import "GameConfig.h"
 #import "MainMenu.h"
 #import "RootViewController.h"
-
+#import "GameData.h"
 
 
 @implementation SokokusAppDelegate
 
 @synthesize window;
+
+extern GameData gSaveGame;
 
 - (void) removeStartupFlicker
 {
@@ -111,6 +113,8 @@
 	// Removes the startup flicker
 	[self removeStartupFlicker];
 	
+	LoadPrefs();
+	
 	// Run the intro Scene
 	[[CCDirector sharedDirector] runWithScene: [MainMenu scene]];		
 }
@@ -129,6 +133,7 @@
 }
 
 -(void) applicationDidEnterBackground:(UIApplication*)application {
+	SavePrefs();
 	[[CCDirector sharedDirector] stopAnimation];
 }
 
@@ -137,6 +142,7 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+	SavePrefs();
 	CCDirector *director = [CCDirector sharedDirector];
 	
 	[[director openGLView] removeFromSuperview];
@@ -158,59 +164,8 @@
 	[super dealloc];
 }
 
-/*
- - (void)LoadPrefs
- {
-	int check;
-	NSData *savedata;
-	savedata = [[NSUserDefaults standardUserDefaults] dataForKey:@"SaveGame"];
+
  
- //首次启动，设置默认值并保存
-	if (savedata == NULL) {
-		[self SavePrefs];
-	}
-	else {
-		[savedata getBytes:&gSaveGame length:sizeof(gSaveGame)];
- //获取数据
-		check = gSaveGame.check;
- //检查版本
-		if (check == 1.0) {
-			if (gSaveGame.gameActive) {
-				gSaveGame.gameActive = 0;
-			}
-		}
- 
-	}	
- 
- }
- 
- - (void)SavePrefs
- {
-	int i;
- //建立字典并注册
-	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-		[NSNumber numberWithFloat:63], @"SaveGame", 
-									@"dummy", [NSNumber numberWithFloat:1],
-				nil];
-	[[NSUserDefaults standardUserDefaults] registerDefaults:dict];
- 
-	saveGame_Type gSaveGame;
- 
-	NSData *savedata;
-	unsigned char *ptr;
-	unsigned char *save;
-	save = malloc(sizeof(gSaveGame));
- 
-	ptr = (unsigned char *)&gSaveGame;
-	for (a = 0; a < sizeof(gSaveGame); a ++) {
-		*(save + a) = *(ptr + a);
-	}
-	savedata = [[NSData alloc] initWithBytes:save length:sizeof(gSaveGame)];
- 
-	[[NSUserDefaults standardUserDefaults] setObject:savedata forKey:@"SaveGame"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
- 
- }
- */
+
 
 @end

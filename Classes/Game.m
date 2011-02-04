@@ -9,10 +9,12 @@
 #import "Game.h"
 #import "MainMenu.h"
 #import "GameLayer.h"
-#import "Data.h"
+#import "GameData.h"
 #define GAME_LEVEL  12	//难度
 
+
 @implementation Game
+
 
 
 //int correct[9][9]; //空格处正确的数字，其余为0
@@ -28,24 +30,20 @@ CGPoint everyPoint[9][9];
 
 CCSprite *work;
 
-
-Data gameData;
-
-
+extern GameData gSaveGame;
 
 
 - (id) init {
 	if ((self = [super init])) {
 		
 		Numbers *firstGen = [Numbers node];
-		//Data *gameData = [Game node];
+		//Data *gSaveGame = [Game node];
 		
 		self.isTouchEnabled = YES;
 		int i = 0, j = 0, k = 0, m = 0, temp = 0;
 		int x = 0, y = 0;
 		int flag = 0;
 		int rand9[9];
-	
 	
 
 		
@@ -96,13 +94,13 @@ Data gameData;
 		
 		for (i = 0; i < 9; i++) {
 			for (j = 0; j < 9; j++) {
-				gameData.originalGenerated[i][j] = seedList[i][j];
+				gSaveGame.originalGenerated[i][j] = seedList[i][j];
 			}
 		}
 //打印	
 		for (i = 0; i < 9; i++) 
 			for (j = 0; j < 9; j++){
-				printf("%d ", gameData.originalGenerated[i][j]);
+				printf("%d ", gSaveGame.originalGenerated[i][j]);
 				if (j == 8) 
 					printf("\n");
 			}
@@ -115,10 +113,10 @@ Data gameData;
 			{
 				//correct[i][j] = 0;
 				
-				gameData.correct[i][j] = 0;
+				gSaveGame.correct[i][j] = 0;
 				//doing[i][j] = 0;
 				
-				gameData.doing[i][j] = 0;
+				gSaveGame.doing[i][j] = 0;
 			}
 		
 		for (i = 0; i < 9; i++) {
@@ -135,18 +133,18 @@ Data gameData;
 				b = arc4random()%9;
 //				correct[a][b] = seedList[a][b];
 
-				gameData.correct[a][b] = seedList[a][b];
+				gSaveGame.correct[a][b] = seedList[a][b];
 			
 			}
 		}
 	
 //加载背景图案	
-		/*
+		
 		CCSprite *gameBack = [CCSprite spriteWithFile:@"gameBack.png"];
 		//gameBack.anchorPoint = CGPointZero;
 		gameBack.position = ccp(160, 240);
 		[self addChild:gameBack z:-100];
-		 */
+		 
 //加载网格		
 		CCSprite *gameGrid = [CCSprite spriteWithFile:@"gridStyle2.png"];
 		gameGrid.positionInPixels = ccp(320, 520);
@@ -164,8 +162,8 @@ Data gameData;
 		for (i = 0; i < 9; i++) {
 			for (j = 0; j < 9; j++) {
 				everyPoint[i][j] = ccp(x/2, y/2);//获取坐标
-				if (gameData.correct[i][j] != 0) {x += 70; continue;}
-				one = [[firstGen.greenNumbers objectAtIndex:i] objectAtIndex:(seedList[i][j] - 1)];
+				if (gSaveGame.correct[i][j] != 0) {x += 70; continue;}
+				one = [[firstGen.grayNumbers objectAtIndex:i] objectAtIndex:(seedList[i][j] - 1)];
 				one.positionInPixels = ccp(x, y);
 				[self addChild:one z:k+1];
 				x += 70;
@@ -288,9 +286,9 @@ Data gameData;
 				}
 			}
 		}
-		NSLog(@"%d", gameData.correct[a][b]);
+		//NSLog(@"%d", gSaveGame.correct[a][b]);
 		//如果不是空格，数字不落下
-		if (gameData.correct[a][b] == 0) {
+		if (gSaveGame.correct[a][b] == 0) {
 			[self removeChild:work cleanup:YES];
 			work = nil;
 		}
@@ -300,7 +298,7 @@ Data gameData;
 				[self removeChild:gridNumbers[a][b] cleanup:YES];
 			}
 			//doing[a][b] = selectedNumberTemp;
-			gameData.doing[a][b] = selectedNumberTemp;
+			gSaveGame.doing[a][b] = selectedNumberTemp;
 			gridNumbers[a][b] = work;
 			[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
 			[work runAction:[CCMoveTo actionWithDuration:0 position:inHere]];
@@ -309,14 +307,15 @@ Data gameData;
 			
 			
 		}
+		SavePrefs();
 		for (i = 0; i < 9; i++) 
 			for (j = 0; j < 9; j++){
-				printf("%d ", gameData.doing[i][j]);
+				printf("%d ", gSaveGame.doing[i][j]);
 				if (j == 8) 
 					printf("\n");
 			}
 		//如果玩家填的数字全部正确，则执行
-		if (checkThemAll(gameData.doing, gameData.correct)) {
+		if (checkThemAll(gSaveGame.doing, gSaveGame.correct)) {
 			NSLog(@"win");
 			CCSprite *win = [CCSprite spriteWithFile:@"gaoding.png"];
 			win.positionInPixels = ccp(320, 480);

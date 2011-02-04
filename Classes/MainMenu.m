@@ -15,9 +15,11 @@
 // Import the interfaces
 #import "MainMenu.h"
 #import "GameLayer.h"
-
+#import "Data.h"
 // MainMenu implementation
 @implementation MainMenu
+
+extern GameData gSaveGame;
 
 +(id) scene
 {
@@ -49,7 +51,7 @@
 		[CCMenuItemFont setFontSize:25];
 		
 		CCMenuItem *newGame = [CCMenuItemFont itemFromString:@"新游戏" target:self selector:@selector(newGame:)];
-		CCMenuItem *loadGame = [CCMenuItemFont itemFromString:@"读取游戏" target:self selector:nil];
+		CCMenuItem *loadGame = [CCMenuItemFont itemFromString:@"读取游戏" target:self selector:@selector(loadGame:)];
 		CCMenuItem *gameSettings = [CCMenuItemFont itemFromString:@"游戏设置" target:self selector:@selector(gameSettings:)];
 		CCMenuItem *quitGame = [CCMenuItemFont itemFromString:@"退出游戏" target:self selector:@selector(quitGame:)];
 		
@@ -62,6 +64,22 @@
 	return self;
 }
 
+- (void) loadGame:(id)sender{
+	int i, j;
+	printf("%f\n", gSaveGame.check);
+	for (i = 0; i < 9; i++) 
+		for (j = 0; j < 9; j++){
+			printf("%d ", gSaveGame.doing[i][j]);
+			if (j == 8) 
+				printf("\n");
+		}
+	for (i = 0; i < 9; i++) 
+		for (j = 0; j < 9; j++){
+			printf("%d ", gSaveGame.correct[i][j]);
+			if (j == 8) 
+				printf("\n");
+		}
+}
 - (void) newGame:(id)sender{
 	CCScene *newGameScene = [CCScene node];
 	[newGameScene addChild:[GameLayer node]];
@@ -85,6 +103,8 @@
 	// don't forget to call "super dealloc"
 	[super dealloc];
 }
+
+
 @end
 
 

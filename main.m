@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameData.h"
+
+GameData gSaveGame;
 
 int main(int argc, char *argv[]) {
 	NSAutoreleasePool *pool = [NSAutoreleasePool new];

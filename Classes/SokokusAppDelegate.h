@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Data.h"
+#import "GameData.h"
 
 @class RootViewController;
 
