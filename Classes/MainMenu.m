@@ -15,7 +15,8 @@
 // Import the interfaces
 #import "MainMenu.h"
 #import "GameLayer.h"
-#import "Data.h"
+#import "GameData.h"
+#import "Game.h"
 // MainMenu implementation
 @implementation MainMenu
 
@@ -65,20 +66,11 @@ extern GameData gSaveGame;
 }
 
 - (void) loadGame:(id)sender{
-	int i, j;
-	printf("%f\n", gSaveGame.check);
-	for (i = 0; i < 9; i++) 
-		for (j = 0; j < 9; j++){
-			printf("%d ", gSaveGame.doing[i][j]);
-			if (j == 8) 
-				printf("\n");
-		}
-	for (i = 0; i < 9; i++) 
-		for (j = 0; j < 9; j++){
-			printf("%d ", gSaveGame.correct[i][j]);
-			if (j == 8) 
-				printf("\n");
-		}
+	if (gSaveGame.gameActive == YES) {
+		CCScene *loadGameScene = [CCScene node];
+		[loadGameScene addChild:[Game node]];
+		[[CCDirector sharedDirector] replaceScene:loadGameScene];
+	}
 }
 - (void) newGame:(id)sender{
 	CCScene *newGameScene = [CCScene node];

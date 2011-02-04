@@ -9,9 +9,12 @@
 #import "GameLayer.h"
 #import "MainMenu.h"
 #import "Game.h"
+#import "GameData.h"
 #define WINDOWWIDTH		640
 #define WINDOWHEIGHT	960
 @implementation GameLayer
+
+extern GameData gSaveGame;
 
 - (id) init{
 
@@ -47,6 +50,7 @@
 
 - (void) startGameLevel1:(id)sender{
 	//NSLog(@"Level1");
+	gSaveGame.difficulty = 1;	//游戏难度
 	CCScene *level1 = [CCScene node];
 	[level1 addChild:[Game node]];
 	[[CCDirector sharedDirector] replaceScene:level1];

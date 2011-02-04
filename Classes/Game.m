@@ -10,16 +10,13 @@
 #import "MainMenu.h"
 #import "GameLayer.h"
 #import "GameData.h"
-#define GAME_LEVEL  12	//难度
+//#define GAME_LEVEL  12	//难度
 
 
 @implementation Game
 
 
 
-//int correct[9][9]; //空格处正确的数字，其余为0
-
-//int doing[9][9];	//玩家正在做的数组
 CCSprite *gridNumbers[9][9]; //空格处的sprite，保存了用户在相应位置填的数
 
 int selectedNumberTemp;
@@ -34,70 +31,52 @@ extern GameData gSaveGame;
 
 
 - (id) init {
+	
 	if ((self = [super init])) {
 		
 		Numbers *firstGen = [Numbers node];
 		//Data *gSaveGame = [Game node];
 		
 		self.isTouchEnabled = YES;
-		int i = 0, j = 0, k = 0, m = 0, temp = 0;
+		int i = 0, j = 0, k = 0;
 		int x = 0, y = 0;
-		int flag = 0;
-		int rand9[9];
-	
-
+		NSMutableArray *array;
+		CGPoint tempPosition;
 		
-//初始模板数独
-		int seedList[9][9] = {
-		{9,7,8,3,1,2,6,4,5},  
-		{3,1,2,6,4,5,9,7,8},  
-		{6,4,5,9,7,8,3,1,2},  
-		{7,8,9,1,2,3,4,5,6},  
-		{1,2,3,4,5,6,7,8,9},  
-		{4,5,6,7,8,9,1,2,3},  
-		{8,9,7,2,3,1,5,6,4},  
-		{2,3,1,5,6,4,8,9,7},  
-		{5,6,4,8,9,7,2,3,1}  
-	};
-	
-//生成1维随机数列
-		for (i = 0; i < 9; ) {
-			temp = arc4random()%9 + 1;
-			for (j = 0; j < i; j++) 
-				if (temp == rand9[j])
-				{
-					flag = 1;
-					break;
-				}
-			if (flag) {
-				flag = 0;
-				continue;
+		for (i = 0; i < 9; i++) 
+			for (j = 0; j < 9; j++){
+				printf("%d ", gSaveGame.doing[i][j]);
+				if (j == 8) 
+					printf("\n");
 			}
-			rand9[i] = temp;
-			i++;
+		
+		if (gSaveGame.gameActive == NO) {
+			createNewSodoku();
+			createCorrectMatrix(gSaveGame.difficulty);
 		}
-	
-
-	
-//生成随机数独阵
-	
-		for (i = 0; i < 9; i++) {
-			for (j = 0; j < 9; j++) {
-				for (m = 0; m < 9; m++) {
-					if (seedList[i][j] == rand9[m]) {
-						seedList[i][j] = rand9[(m+1)%9];
-						break;
+		else {
+			
+			for (i = 0; i < 9; i++) {
+				for (j = 0; j < 9; j++) {
+					if (gSaveGame.doing[i][j]) {
+						Numbers *firstGen = [Numbers node];
+						array = [firstGen createNumbers];
+						tempPosition = ccp(j*70 + 40, 800 - i*70);
+						CCSprite *a = [[array objectAtIndex:1] objectAtIndex: gSaveGame.doing[i][j] - 1];
+						a.positionInPixels = tempPosition;
+						gridNumbers[i][j] = a;
+						[self addChild:a z:51];
 					}
 				}
 			}
+			
+			
 		}
+
 		
-		for (i = 0; i < 9; i++) {
-			for (j = 0; j < 9; j++) {
-				gSaveGame.originalGenerated[i][j] = seedList[i][j];
-			}
-		}
+		gSaveGame.gameActive = YES;
 //打印	
+		/*
 		for (i = 0; i < 9; i++) 
 			for (j = 0; j < 9; j++){
 				printf("%d ", gSaveGame.originalGenerated[i][j]);
@@ -105,38 +84,7 @@ extern GameData gSaveGame;
 					printf("\n");
 			}
 		printf("\n");
-//按难度挖孔	
-		int a = 0, b = 0;
-//初始化	
-		for (i = 0; i < 9; i++) 
-			for (j = 0; j < 9; j++)
-			{
-				//correct[i][j] = 0;
-				
-				gSaveGame.correct[i][j] = 0;
-				//doing[i][j] = 0;
-				
-				gSaveGame.doing[i][j] = 0;
-			}
-		
-		for (i = 0; i < 9; i++) {
-			for (j = 0; j < 9; j++) {
-				gridNumbers[i][j] = nil;
-			}
-		}
-		
-	
-//每行不超过level个孔	
-		for (i = 0; i < 9 ; i++) {
-			for (k = 0; k < GAME_LEVEL; k++) {
-				a = i;
-				b = arc4random()%9;
-//				correct[a][b] = seedList[a][b];
-
-				gSaveGame.correct[a][b] = seedList[a][b];
-			
-			}
-		}
+		*/
 	
 //加载背景图案	
 		
@@ -163,7 +111,7 @@ extern GameData gSaveGame;
 			for (j = 0; j < 9; j++) {
 				everyPoint[i][j] = ccp(x/2, y/2);//获取坐标
 				if (gSaveGame.correct[i][j] != 0) {x += 70; continue;}
-				one = [[firstGen.grayNumbers objectAtIndex:i] objectAtIndex:(seedList[i][j] - 1)];
+				one = [[firstGen.grayNumbers objectAtIndex:i] objectAtIndex:(gSaveGame.originalGenerated[i][j] - 1)];
 				one.positionInPixels = ccp(x, y);
 				[self addChild:one z:k+1];
 				x += 70;
@@ -194,7 +142,104 @@ extern GameData gSaveGame;
 }
 
 #pragma mark -
+#pragma mark Create Sodokus
+
+void createNewSodoku()
+{
+	int i, j, m, temp, flag;
+	int rand9[9];
+	temp = 0;
+	flag = 0;
+	//初始模板数独
+	int seedList[9][9] = {
+		{9,7,8,3,1,2,6,4,5},  
+		{3,1,2,6,4,5,9,7,8},  
+		{6,4,5,9,7,8,3,1,2},  
+		{7,8,9,1,2,3,4,5,6},  
+		{1,2,3,4,5,6,7,8,9},  
+		{4,5,6,7,8,9,1,2,3},  
+		{8,9,7,2,3,1,5,6,4},  
+		{2,3,1,5,6,4,8,9,7},  
+		{5,6,4,8,9,7,2,3,1}  
+	};
+	
+	//生成1维随机数列
+	for (i = 0; i < 9; ) {
+		temp = arc4random()%9 + 1;
+		for (j = 0; j < i; j++) 
+			if (temp == rand9[j])
+			{
+				flag = 1;
+				break;
+			}
+		if (flag) {
+			flag = 0;
+			continue;
+		}
+		rand9[i] = temp;
+		i++;
+	}
+	
+	
+	
+	//生成随机数独阵
+	
+	for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
+			for (m = 0; m < 9; m++) {
+				if (seedList[i][j] == rand9[m]) {
+					seedList[i][j] = rand9[(m+1)%9];
+					break;
+				}
+			}
+		}
+	}
+	
+	for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
+			gSaveGame.originalGenerated[i][j] = seedList[i][j];
+		}
+	}
+	
+}
+
+void createCorrectMatrix(int difficulty)
+{
+	//按难度挖孔	
+	int i, j, k;
+	int a = 0, b = 0;
+	
+	difficulty = gSaveGame.difficulty;
+	//初始化	
+	for (i = 0; i < 9; i++) 
+		for (j = 0; j < 9; j++)
+		{
+			gSaveGame.correct[i][j] = 0;
+			gSaveGame.doing[i][j] = 0;
+		}
+	
+	for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
+			gridNumbers[i][j] = nil;
+		}
+	}
+	
+	
+	//每行不超过level个孔	
+	for (i = 0; i < 9 ; i++) {
+		for (k = 0; k < difficulty; k++) {
+			a = i;
+			b = arc4random()%9;
+			gSaveGame.correct[a][b] = gSaveGame.originalGenerated[a][b];
+			
+		}
+	}
+	
+}
+
+#pragma mark -
 #pragma mark Touches
+
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 
@@ -297,7 +342,7 @@ extern GameData gSaveGame;
 			if (gridNumbers[a][b]) {
 				[self removeChild:gridNumbers[a][b] cleanup:YES];
 			}
-			//doing[a][b] = selectedNumberTemp;
+			
 			gSaveGame.doing[a][b] = selectedNumberTemp;
 			gridNumbers[a][b] = work;
 			[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
@@ -317,6 +362,7 @@ extern GameData gSaveGame;
 		//如果玩家填的数字全部正确，则执行
 		if (checkThemAll(gSaveGame.doing, gSaveGame.correct)) {
 			NSLog(@"win");
+			gSaveGame.gameActive = NO;
 			CCSprite *win = [CCSprite spriteWithFile:@"gaoding.png"];
 			win.positionInPixels = ccp(320, 480);
 			[win runAction:[CCRotateBy actionWithDuration:0 angle:30]];
@@ -330,18 +376,21 @@ extern GameData gSaveGame;
 	
 }
 
+#pragma mark -
+#pragma mark Do Checking
 
 //查看完成的数组是否正确
-int checkThemAll(int user[9][9], int right[9][9])
+BOOL checkThemAll(int user[9][9], int right[9][9])
 {
-	int i = 0, j = 0, win = 1;
+	int i = 0, j = 0;
+	BOOL win = YES;
 	for (i = 0;	i < 9; i++) {
 		for (j = 0; j < 9; j++) {
 			if (right[i][j] == 0) 
 				continue;
 			else 
 				if (user[i][j] != right[i][j]) {
-					win = 0;
+					win = NO;
 					break;
 				}
 		}

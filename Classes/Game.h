@@ -13,6 +13,9 @@
 
 }
 
-
-
+BOOL checkThemAll(int user[9][9], int right[9][9]);
+int isInLeft(CGPoint point);
+int isInRight(CGPoint point);
+void createNewSodoku();
+void createCorrectMatrix(int difficulty);
 @end
