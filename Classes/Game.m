@@ -25,9 +25,13 @@ int pointInLeft = 0, pointInRight = 0;	//是否点中左右两个按钮
 
 CGPoint everyPoint[9][9];
 
-CCSprite *work;
+CCSprite *work, *aGrid;
 
 extern GameData gSaveGame;
+
+int aGridFlag = 0;
+
+
 
 
 - (id) init {
@@ -242,8 +246,11 @@ void createCorrectMatrix(int difficulty)
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+	int i, j, a, b;
 
 	int theSelectedNumber;	//选中的数字
+	int positionAbs = 800;
+	CGPoint inHere = CGPointMake(320, 480);
 	NSMutableArray *array;
 	UITouch *touch = [touches anyObject];
 	
@@ -269,8 +276,41 @@ void createCorrectMatrix(int difficulty)
 		
 	}
 	else {
-		return;
+		
+		for (i = 0; i < 9; i++) {
+			for (j = 0; j < 9; j++) {
+				if ((abs(everyPoint[i][j].x - convertedStartPosition.x) + abs(everyPoint[i][j].y - convertedStartPosition.y)) < positionAbs) {
+					positionAbs = abs(everyPoint[i][j].x - convertedStartPosition.x) + abs(everyPoint[i][j].y - convertedStartPosition.y);
+					a = i;
+					b = j;
+					inHere = everyPoint[i][j];
+				}
+			}
+		}
+		j = (int)((inHere.x - 2.5)/35);
+		i = (int)(9 - (inHere.y - 102.5)/35);
+		if (gSaveGame.correct[i][j]){
+			if (!aGridFlag) {
+				aGrid = [CCSprite spriteWithFile:@"aGrid.png"];
+				[aGrid retain];
+				aGrid.position = inHere;
+				[self addChild:aGrid z:50];
+				aGridFlag = 1;
+				
+			}
+			else {
+				[aGrid runAction:[CCMoveTo actionWithDuration:0 position:inHere]];
+			}
+
+			
+			//[self removeChild:aGrid cleanup:NO];
+			//gridLight = aGrid;
+			
+			
+		}
 	}
+	
+
 
 		
 }
@@ -418,6 +458,7 @@ int isInRight(CGPoint point)
 
 - (void) dealloc
 {
+	[aGrid release];
 	[super dealloc];
 }
 @end
