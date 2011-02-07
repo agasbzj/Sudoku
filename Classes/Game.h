@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Numbers.h"
+
+typedef struct{
+	CGPoint here;
+	int i, j;
+}HereGridPosition;
+
 @interface Game : CCLayer {
 
 }
@@ -18,4 +24,5 @@ int isInLeft(CGPoint point);
 int isInRight(CGPoint point);
 void createNewSodoku();
 void createCorrectMatrix(int difficulty);
+HereGridPosition theRealGridPosition(CGPoint now);
 @end

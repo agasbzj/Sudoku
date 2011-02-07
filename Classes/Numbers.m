@@ -15,7 +15,7 @@
 @synthesize redNumbers;
 @synthesize temp1;
 @synthesize controlNumbers;
-
+@synthesize smallNumbers;
 - (NSMutableArray *) createNumbers
 {
 	NSArray *temp;
@@ -66,7 +66,23 @@
 	return controlNumbers;
 }
 
-
+- (NSArray *)createSmallNumbers
+{
+	CCSprite *num1 = [CCSprite spriteWithFile:@"num1s.png"];
+	CCSprite *num2 = [CCSprite spriteWithFile:@"num2s.png"];
+	CCSprite *num3 = [CCSprite spriteWithFile:@"num3s.png"];
+	CCSprite *num4 = [CCSprite spriteWithFile:@"num4s.png"];
+	CCSprite *num5 = [CCSprite spriteWithFile:@"num5s.png"];
+	CCSprite *num6 = [CCSprite spriteWithFile:@"num6s.png"];
+	CCSprite *num7 = [CCSprite spriteWithFile:@"num7s.png"];
+	CCSprite *num8 = [CCSprite spriteWithFile:@"num8s.png"];
+	CCSprite *num9 = [CCSprite spriteWithFile:@"num9s.png"];
+	CCSprite *num0 = [CCSprite spriteWithFile:@"num0s.png"];
+	
+	smallNumbers = [NSArray arrayWithObjects:num0, num1, num2, num3, num4, num5, num6, num7, num8, num9, nil];
+	
+	return smallNumbers;
+}
 
 -(id) init
 {

@@ -42,7 +42,7 @@ int aGridFlag = 0;
 		//Data *gSaveGame = [Game node];
 		
 		self.isTouchEnabled = YES;
-		int i = 0, j = 0, k = 0;
+		int i = 0, j = 0;
 		int x = 0, y = 0;
 		NSMutableArray *array;
 		CGPoint tempPosition;
@@ -69,7 +69,7 @@ int aGridFlag = 0;
 						CCSprite *a = [[array objectAtIndex:1] objectAtIndex: gSaveGame.doing[i][j] - 1];
 						a.positionInPixels = tempPosition;
 						gridNumbers[i][j] = a;
-						[self addChild:a z:51];
+						[self addChild:a z:0];
 					}
 				}
 			}
@@ -100,12 +100,12 @@ int aGridFlag = 0;
 //加载网格		
 		CCSprite *gameGrid = [CCSprite spriteWithFile:@"gridStyle2.png"];
 		gameGrid.positionInPixels = ccp(320, 520);
-		[self addChild:gameGrid z:-50];		
+		[self addChild:gameGrid z:0];		
 		
 
 		
 		x = 40;
-		y = 800;
+		y = 800;	//初始左上角的格子的中心点的实际坐标
 		
 		CCSprite *one;
 		
@@ -113,11 +113,11 @@ int aGridFlag = 0;
 //正式加载游戏		
 		for (i = 0; i < 9; i++) {
 			for (j = 0; j < 9; j++) {
-				everyPoint[i][j] = ccp(x/2, y/2);//获取坐标
+				everyPoint[i][j] = ccp(x/2, y/2);//获取每个点的实际坐标
 				if (gSaveGame.correct[i][j] != 0) {x += 70; continue;}
 				one = [[firstGen.grayNumbers objectAtIndex:i] objectAtIndex:(gSaveGame.originalGenerated[i][j] - 1)];
 				one.positionInPixels = ccp(x, y);
-				[self addChild:one z:k+1];
+				[self addChild:one z:0];
 				x += 70;
 			}
 			x = 40;
@@ -129,16 +129,16 @@ int aGridFlag = 0;
 		for (i = 0; i < 9; i++) {
 			one = [[firstGen.redNumbers objectAtIndex:0] objectAtIndex:i];
 			one.positionInPixels = ccp(x, 898);
-			[self addChild:one z:3 tag:i+1];
+			[self addChild:one z:0 tag:i+1];
 			x += 70;
 		}
 //底部的按钮		
 		CCSprite *renewButton = [CCSprite spriteWithFile:@"new.png"];
 		renewButton.positionInPixels = ccp(160, 102);
-		[self addChild:renewButton z:3 tag:13];
+		[self addChild:renewButton z:0 tag:13];
 		CCSprite *loseButton = [CCSprite spriteWithFile:@"lose.png"];
 		loseButton.positionInPixels = ccp(480, 102);
-		[self addChild:loseButton z:3 tag:14];
+		[self addChild:loseButton z:0 tag:14];
 		
 		
 	}
@@ -246,11 +246,12 @@ void createCorrectMatrix(int difficulty)
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	int i, j, a, b;
+	int i, j;
 
 	int theSelectedNumber;	//选中的数字
-	int positionAbs = 800;
-	CGPoint inHere = CGPointMake(320, 480);
+	
+	//CGPoint inHere = CGPointMake(320, 480);
+	HereGridPosition inHere;
 	NSMutableArray *array;
 	UITouch *touch = [touches anyObject];
 	
@@ -269,14 +270,15 @@ void createCorrectMatrix(int difficulty)
 		selectedNumberTemp = theSelectedNumber;
 		CCSprite *one = [[array objectAtIndex:1] objectAtIndex:theSelectedNumber - 1];
 		one.position = convertedStartPosition;
-		[self addChild:one];
+		one.scale = 2.0;
+		[self addChild:one z:20];
 		[one stopAllActions];
-		[one runAction:[CCScaleBy actionWithDuration:0 scale:2.0]];
+		//[one runAction:[CCScaleBy actionWithDuration:0 scale:2.0]];
 		work = one;
 		
 	}
 	else {
-		
+		/*
 		for (i = 0; i < 9; i++) {
 			for (j = 0; j < 9; j++) {
 				if ((abs(everyPoint[i][j].x - convertedStartPosition.x) + abs(everyPoint[i][j].y - convertedStartPosition.y)) < positionAbs) {
@@ -287,19 +289,23 @@ void createCorrectMatrix(int difficulty)
 				}
 			}
 		}
-		j = (int)((inHere.x - 2.5)/35);
-		i = (int)(9 - (inHere.y - 102.5)/35);
+		 */
+		inHere = theRealGridPosition(convertedStartPosition);
+		j = (int)((inHere.here.x - 2.5)/35);
+		i = (int)(9 - (inHere.here.y - 102.5)/35);
+		
+		//如果点选的是可以填写的格子
 		if (gSaveGame.correct[i][j]){
 			if (!aGridFlag) {
 				aGrid = [CCSprite spriteWithFile:@"aGrid.png"];
 				[aGrid retain];
-				aGrid.position = inHere;
-				[self addChild:aGrid z:50];
+				aGrid.position = inHere.here;
+				[self addChild:aGrid z:30];
 				aGridFlag = 1;
 				
 			}
 			else {
-				[aGrid runAction:[CCMoveTo actionWithDuration:0 position:inHere]];
+				[aGrid runAction:[CCMoveTo actionWithDuration:0 position:inHere.here]];
 			}
 
 			
@@ -334,8 +340,8 @@ void createCorrectMatrix(int difficulty)
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	int i, j, a, b;
-	CGPoint inHere = CGPointMake(320, 480);	//最终落子点（修正）
-	int positionAbs = 800;
+	//CGPoint inHere = CGPointMake(320, 480);	//最终落子点（修正）
+	HereGridPosition here;
 	UITouch *touch = [touches anyObject];
 	
 	CGPoint endLocation = [touch locationInView: [touch view]];
@@ -360,7 +366,8 @@ void createCorrectMatrix(int difficulty)
 
 	}
 	else {
-		//查询最近的位置，使数字自动落在网格的中间	
+		//查询最近的位置，使数字自动落在网格的中间
+		/*
 		for (i = 0; i < 9; i++) {
 			for (j = 0; j < 9; j++) {
 				if ((abs(everyPoint[i][j].x - finalLocation.x) + abs(everyPoint[i][j].y - finalLocation.y)) < positionAbs) {
@@ -371,8 +378,13 @@ void createCorrectMatrix(int difficulty)
 				}
 			}
 		}
+		 */
 		//NSLog(@"%d", gSaveGame.correct[a][b]);
+		//inHere = theRealGridPosition(finalLocation);
+		here = theRealGridPosition(finalLocation);
 		//如果不是空格，数字不落下
+		a = here.i;
+		b = here.j;
 		if (gSaveGame.correct[a][b] == 0) {
 			[self removeChild:work cleanup:YES];
 			work = nil;
@@ -385,8 +397,9 @@ void createCorrectMatrix(int difficulty)
 			
 			gSaveGame.doing[a][b] = selectedNumberTemp;
 			gridNumbers[a][b] = work;
-			[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
-			[work runAction:[CCMoveTo actionWithDuration:0 position:inHere]];
+			//[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
+			work.scale = 1.0;
+			[work runAction:[CCMoveTo actionWithDuration:0 position:here.here]];
 			work = nil;
 			
 			
@@ -405,8 +418,9 @@ void createCorrectMatrix(int difficulty)
 			gSaveGame.gameActive = NO;
 			CCSprite *win = [CCSprite spriteWithFile:@"gaoding.png"];
 			win.positionInPixels = ccp(320, 480);
-			[win runAction:[CCRotateBy actionWithDuration:0 angle:30]];
-			[self addChild:win z:1000];
+			win.rotation = -30;
+			//[win runAction:[CCRotateBy actionWithDuration:0 angle:30]];
+			[self addChild:win z:100];
 			
 		}
 		
@@ -454,6 +468,28 @@ int isInRight(CGPoint point)
 		flag = 1;
 	}
 	return flag;
+}
+
+//获取点选位置的格子的中心的实际坐标
+HereGridPosition theRealGridPosition(CGPoint now)
+{
+	int i, j, a, b;
+	int positionAbs = 800;
+	HereGridPosition pos;
+	for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
+			if ((abs(everyPoint[i][j].x - now.x) + abs(everyPoint[i][j].y - now.y)) < positionAbs) {
+				positionAbs = abs(everyPoint[i][j].x - now.x) + abs(everyPoint[i][j].y - now.y);
+				pos.here = everyPoint[i][j];
+				a = i;
+				b = j;
+			}
+		}
+		
+	}
+	pos.i = a;
+	pos.j = b;
+	return pos;
 }
 
 - (void) dealloc
