@@ -44,6 +44,9 @@ extern GameData gSaveGame;
 }
 - (void) applicationDidFinishLaunching:(UIApplication*)application
 {
+	
+	
+	
 	// Init the window
 	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
@@ -114,7 +117,7 @@ extern GameData gSaveGame;
 	[self removeStartupFlicker];
 	
 	LoadPrefs();
-	
+	[glView setMultipleTouchEnabled:YES];
 	// Run the intro Scene
 	[[CCDirector sharedDirector] runWithScene: [MainMenu scene]];		
 }

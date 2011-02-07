@@ -20,16 +20,20 @@
 CCSprite *gridNumbers[9][9]; //空格处的sprite，保存了用户在相应位置填的数
 
 int selectedNumberTemp;
-
 int pointInLeft = 0, pointInRight = 0;	//是否点中左右两个按钮
+int theSelectedNumber;	//选中的数字
+int aGridFlag = 0;
 
 CGPoint everyPoint[9][9];
+CGPoint aGridTemp;
 
 CCSprite *work, *aGrid;
 
 extern GameData gSaveGame;
 
-int aGridFlag = 0;
+
+
+BOOL aGridisActive = NO;
 
 
 
@@ -247,8 +251,14 @@ void createCorrectMatrix(int difficulty)
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	int i, j;
-
-	int theSelectedNumber;	//选中的数字
+	aGridTemp = ccp(0,0);
+	
+	if ([touches count] == 2) {
+		aGridisActive = NO;
+		//[self removeChild:aGrid cleanup:YES];
+		
+		return;
+	}	
 	
 	//CGPoint inHere = CGPointMake(320, 480);
 	HereGridPosition inHere;
@@ -258,66 +268,72 @@ void createCorrectMatrix(int difficulty)
 	CGPoint startPositon = [touch locationInView:[touch view]];
 	CGPoint convertedStartPosition = [[CCDirector sharedDirector] convertToGL:startPositon];
 	
-//检测点击的是否是按钮		
+	//检测点击的是否是按钮		
 	pointInLeft = isInLeft(convertedStartPosition);
 	pointInRight= isInRight(convertedStartPosition);
 	
-
-	if (convertedStartPosition.y > 431 && convertedStartPosition.y < 466) {
-		Numbers *firstGen = [Numbers node];
-		array = [firstGen createNumbers];
-		theSelectedNumber = convertedStartPosition.x / 35 + 1;	//选中的数字
-		selectedNumberTemp = theSelectedNumber;
-		CCSprite *one = [[array objectAtIndex:1] objectAtIndex:theSelectedNumber - 1];
-		one.position = convertedStartPosition;
-		one.scale = 2.0;
-		[self addChild:one z:20];
-		[one stopAllActions];
-		//[one runAction:[CCScaleBy actionWithDuration:0 scale:2.0]];
-		work = one;
-		
-	}
-	else {
-		/*
-		for (i = 0; i < 9; i++) {
-			for (j = 0; j < 9; j++) {
-				if ((abs(everyPoint[i][j].x - convertedStartPosition.x) + abs(everyPoint[i][j].y - convertedStartPosition.y)) < positionAbs) {
-					positionAbs = abs(everyPoint[i][j].x - convertedStartPosition.x) + abs(everyPoint[i][j].y - convertedStartPosition.y);
-					a = i;
-					b = j;
-					inHere = everyPoint[i][j];
-				}
-			}
+	if (aGridisActive == YES) {
+		//点了操作用数字？
+		if (convertedStartPosition.y > 431 && convertedStartPosition.y < 466) {
+			Numbers *firstGen = [Numbers node];
+			array = [firstGen createNumbers];
+			theSelectedNumber = convertedStartPosition.x / 35 + 1;
+			
 		}
-		 */
-		inHere = theRealGridPosition(convertedStartPosition);
-		j = (int)((inHere.here.x - 2.5)/35);
-		i = (int)(9 - (inHere.here.y - 102.5)/35);
 		
-		//如果点选的是可以填写的格子
-		if (gSaveGame.correct[i][j]){
-			if (!aGridFlag) {
-				aGrid = [CCSprite spriteWithFile:@"aGrid.png"];
-				[aGrid retain];
-				aGrid.position = inHere.here;
-				[self addChild:aGrid z:30];
-				aGridFlag = 1;
-				
-			}
-			else {
+		else if(convertedStartPosition.x >= 2.5 && convertedStartPosition.x <= 317.5
+				&& convertedStartPosition.y >= 102.5 && convertedStartPosition.y <= 417.5)
+		{
+			inHere = theRealGridPosition(convertedStartPosition);
+			aGridTemp = inHere.here;
+			j = (int)((inHere.here.x - 2.5)/35);
+			i = (int)(9 - (inHere.here.y - 102.5)/35);
+			//如果点选的是可以填写的格子
+			if (gSaveGame.correct[i][j]){
 				[aGrid runAction:[CCMoveTo actionWithDuration:0 position:inHere.here]];
 			}
-
-			
-			//[self removeChild:aGrid cleanup:NO];
-			//gridLight = aGrid;
-			
 			
 		}
 	}
-	
+	else {
+		//点了操作用数字？
+		if (convertedStartPosition.y > 431 && convertedStartPosition.y < 466) {
+			Numbers *firstGen = [Numbers node];
+			array = [firstGen createNumbers];
+			theSelectedNumber = convertedStartPosition.x / 35 + 1;	//选中的数字
+			selectedNumberTemp = theSelectedNumber;
+			
+			CCSprite *one = [[array objectAtIndex:1] objectAtIndex:theSelectedNumber - 1];
+			one.position = convertedStartPosition;
+			one.scale = 2.0;
+			[self addChild:one z:20];
+			[one stopAllActions];
+			//[one runAction:[CCScaleBy actionWithDuration:0 scale:2.0]];
+			work = one;
+		}
+		else if (convertedStartPosition.x >= 2.5 && convertedStartPosition.x <= 317.5
+				 && convertedStartPosition.y >= 102.5 && convertedStartPosition.y <= 417.5)
+		{
+			inHere = theRealGridPosition(convertedStartPosition);
+			aGridTemp = inHere.here;
+			j = (int)((inHere.here.x - 2.5)/35);
+			i = (int)(9 - (inHere.here.y - 102.5)/35);
+			//如果点选的是可以填写的格子
+			if (gSaveGame.correct[i][j]){
+				if (!aGridFlag) {
+					aGrid = [CCSprite spriteWithFile:@"aGrid.png"];
+					[aGrid retain];
+					aGrid.position = inHere.here;
+					[self addChild:aGrid z:30];
+					aGridFlag = 1;
+				}
+				else {
+					[aGrid runAction:[CCMoveTo actionWithDuration:0 position:inHere.here]];
+				}
 
-
+			}
+		}
+	}
 		
 }
 
@@ -350,84 +366,109 @@ void createCorrectMatrix(int difficulty)
 	i = isInLeft(finalLocation);
 	j = isInRight(finalLocation);
 	
-//点击了按钮，则执行相应任务	
-	if ((pointInLeft && i) || (pointInRight && j)) {
-		if (i) {
-			CCScene *selectDiff = [CCScene node];
-			[selectDiff addChild:[GameLayer node]];
-			[[CCDirector sharedDirector] replaceScene:selectDiff];
+	here = theRealGridPosition(finalLocation);
+	
+	if (aGridTemp.x == here.here.x && aGridTemp.y == here.here.y) {
+		aGridisActive = YES;
+	}
+	
+	
+	if (aGridisActive == NO){
+	//点击了按钮，则执行相应任务	
+		if ((pointInLeft && i) || (pointInRight && j)) {
+			if (i) {
+				CCScene *selectDiff = [CCScene node];
+				[selectDiff addChild:[GameLayer node]];
+				[[CCDirector sharedDirector] replaceScene:selectDiff];
+				
+			}
+			else {
+				CCScene *selectDiff = [CCScene node];
+				[selectDiff addChild:[MainMenu node]];
+				[[CCDirector sharedDirector] replaceScene:selectDiff];
+			}
 			
+
 		}
 		else {
-			CCScene *selectDiff = [CCScene node];
-			[selectDiff addChild:[MainMenu node]];
-			[[CCDirector sharedDirector] replaceScene:selectDiff];
+			//查询最近的位置，使数字自动落在网格的中间
+			
+			here = theRealGridPosition(finalLocation);
+			//如果不是空格，数字不落下
+			a = here.i;
+			b = here.j;
+			if (gSaveGame.correct[a][b] == 0) {
+				[self removeChild:work cleanup:YES];
+				work = nil;
+			}
+			else {
+				//如果这个空格之前填了数字，先清除
+				if (gridNumbers[a][b]) {
+					[self removeChild:gridNumbers[a][b] cleanup:YES];
+				}
+				
+				gSaveGame.doing[a][b] = selectedNumberTemp;
+				gridNumbers[a][b] = work;
+				//[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
+				work.scale = 1.0;
+				[work runAction:[CCMoveTo actionWithDuration:0 position:here.here]];
+				work = nil;
+				
+				
+				
+			}
+			SavePrefs();
+			for (i = 0; i < 9; i++) 
+				for (j = 0; j < 9; j++){
+					printf("%d ", gSaveGame.doing[i][j]);
+					if (j == 8) 
+						printf("\n");
+				}
+			//如果玩家填的数字全部正确，则执行
+			if (checkThemAll(gSaveGame.doing, gSaveGame.correct)) {
+				NSLog(@"win");
+				gSaveGame.gameActive = NO;
+				CCSprite *win = [CCSprite spriteWithFile:@"gaoding.png"];
+				win.positionInPixels = ccp(320, 480);
+				win.rotation = -30;
+				//[win runAction:[CCRotateBy actionWithDuration:0 angle:30]];
+				[self addChild:win z:100];
+				
+			}
+			
+		
 		}
-
 	}
 	else {
-		//查询最近的位置，使数字自动落在网格的中间
-		/*
-		for (i = 0; i < 9; i++) {
-			for (j = 0; j < 9; j++) {
-				if ((abs(everyPoint[i][j].x - finalLocation.x) + abs(everyPoint[i][j].y - finalLocation.y)) < positionAbs) {
-					positionAbs = abs(everyPoint[i][j].x - finalLocation.x) + abs(everyPoint[i][j].y - finalLocation.y);
-					inHere = everyPoint[i][j];
-					a = i;
-					b = j;
-				}
+		if ((pointInLeft && i) || (pointInRight && j)) {
+			if (i) {
+				CCScene *selectDiff = [CCScene node];
+				[selectDiff addChild:[GameLayer node]];
+				[[CCDirector sharedDirector] replaceScene:selectDiff];
+				
 			}
-		}
-		 */
-		//NSLog(@"%d", gSaveGame.correct[a][b]);
-		//inHere = theRealGridPosition(finalLocation);
-		here = theRealGridPosition(finalLocation);
-		//如果不是空格，数字不落下
-		a = here.i;
-		b = here.j;
-		if (gSaveGame.correct[a][b] == 0) {
-			[self removeChild:work cleanup:YES];
-			work = nil;
+			else {
+				CCScene *selectDiff = [CCScene node];
+				[selectDiff addChild:[MainMenu node]];
+				[[CCDirector sharedDirector] replaceScene:selectDiff];
+			}
+			aGridisActive = NO;
+			
+			
 		}
 		else {
-			//如果这个空格之前填了数字，先清除
-			if (gridNumbers[a][b]) {
-				[self removeChild:gridNumbers[a][b] cleanup:YES];
-			}
-			
-			gSaveGame.doing[a][b] = selectedNumberTemp;
-			gridNumbers[a][b] = work;
-			//[work runAction:[CCScaleBy actionWithDuration:0 scale:0.5]];
-			work.scale = 1.0;
-			[work runAction:[CCMoveTo actionWithDuration:0 position:here.here]];
-			work = nil;
-			
-			
-			
+			CGPoint smallPoints[3][3];
+			createPositionsInAGrid(finalLocation, smallPoints);
+			Numbers *sNumbers = [Numbers node];
+			NSArray *smallNum;
+			smallNum = [sNumbers createSmallNumbers];
+			CCSprite *aSmall = [smallNum objectAtIndex:theSelectedNumber];
+			aSmall.position = smallPoints[theSelectedNumber/3][theSelectedNumber%3 - 1];
+			[self addChild:aSmall z:10];
 		}
-		SavePrefs();
-		for (i = 0; i < 9; i++) 
-			for (j = 0; j < 9; j++){
-				printf("%d ", gSaveGame.doing[i][j]);
-				if (j == 8) 
-					printf("\n");
-			}
-		//如果玩家填的数字全部正确，则执行
-		if (checkThemAll(gSaveGame.doing, gSaveGame.correct)) {
-			NSLog(@"win");
-			gSaveGame.gameActive = NO;
-			CCSprite *win = [CCSprite spriteWithFile:@"gaoding.png"];
-			win.positionInPixels = ccp(320, 480);
-			win.rotation = -30;
-			//[win runAction:[CCRotateBy actionWithDuration:0 angle:30]];
-			[self addChild:win z:100];
-			
-		}
-		
+
 	}
 
-	
-	
 }
 
 #pragma mark -
@@ -490,6 +531,21 @@ HereGridPosition theRealGridPosition(CGPoint now)
 	pos.i = a;
 	pos.j = b;
 	return pos;
+}
+
+void createPositionsInAGrid(CGPoint pos, CGPoint work[3][3])
+{
+	int i, j;
+	HereGridPosition temp;
+	temp = theRealGridPosition(pos);
+	CGPoint zero = temp.here;
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < 3; j++) {
+			work[i][j] = ccp(zero.y + j * 11.5 / 2, zero.x + i * 11.5 / 2);
+		}
+	}
+	
+	
 }
 
 - (void) dealloc
