@@ -73,6 +73,7 @@ extern GameData gSaveGame;
 	}
 }
 - (void) newGame:(id)sender{
+	gSaveGame.gameActive = NO;
 	CCScene *newGameScene = [CCScene node];
 	[newGameScene addChild:[GameLayer node]];
 	[[CCDirector sharedDirector] replaceScene:newGameScene];

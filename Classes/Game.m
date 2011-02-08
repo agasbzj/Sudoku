@@ -28,21 +28,39 @@ CGPoint everyPoint[9][9];
 CGPoint aGridTemp;
 CGPoint lastGridTemp;
 
-BOOL canSketch = NO;
+BOOL canSketch;
 CCSprite *work, *aGrid;
 
 extern GameData gSaveGame;
 
 
 
-BOOL aGridisActive = NO;
+BOOL aGridisActive;
 
-
+void clear()
+{
+	for (int i=0; i < 9; i ++) {
+		for (int j = 0; j < 9; j ++) {
+			gridNumbers[i][j] = nil;
+		}
+	}
+	selectedNumberTemp = 0;
+	theSelectedNumber = 0;
+	aGridFlag = 0;
+	aGridTemp = ccp(0,0);
+	lastGridTemp = ccp(0,0);
+	canSketch = NO;
+	aGridisActive = NO;
+	work = nil;
+	aGrid = nil;
+}
 
 
 - (id) init {
 	
 	if ((self = [super init])) {
+		canSketch = NO;
+		aGridisActive = NO;
 		lastGridTemp = ccp(0,0);
 		
 		Numbers *firstGen = [Numbers node];
@@ -98,12 +116,12 @@ BOOL aGridisActive = NO;
 		*/
 	
 //加载背景图案	
-		
+		/*
 		CCSprite *gameBack = [CCSprite spriteWithFile:@"gameBack.png"];
 		//gameBack.anchorPoint = CGPointZero;
 		gameBack.position = ccp(160, 240);
 		[self addChild:gameBack z:-100];
-		 
+		 */
 //加载网格		
 		CCSprite *gameGrid = [CCSprite spriteWithFile:@"gridStyle2.png"];
 		gameGrid.positionInPixels = ccp(320, 520);
@@ -277,6 +295,10 @@ void createCorrectMatrix(int difficulty)
 	pointInLeft = isInLeft(convertedStartPosition);
 	pointInRight= isInRight(convertedStartPosition);
 	
+	if (pointInLeft || pointInRight) {
+		aGridisActive = NO;
+		canSketch = NO;
+	}
 	
 	
 	if (aGridisActive == YES) {
@@ -340,7 +362,7 @@ void createCorrectMatrix(int difficulty)
 			if (gSaveGame.correct[i][j]){
 				if (!aGridFlag) {
 					aGrid = [CCSprite spriteWithFile:@"aGrid.png"];
-					[aGrid retain];
+					//[aGrid retain];
 					aGrid.position = inHere.here;
 					[self addChild:aGrid z:30];
 					aGridFlag = 1;
@@ -396,24 +418,29 @@ void createCorrectMatrix(int difficulty)
 //		aGridisActive = NO;
 
 //	}
+	if (i || j) {
+		aGridisActive = NO;
+		canSketch = NO;
+	}
 	
 	
 	if (aGridisActive == NO){
 	//点击了按钮，则执行相应任务	
 		if ((pointInLeft && i) || (pointInRight && j)) {
-			if (i) {
-				CCScene *selectDiff = [CCScene node];
-				[selectDiff addChild:[GameLayer node]];
-				[[CCDirector sharedDirector] replaceScene:selectDiff];
+			//gSaveGame.gameActive = NO;
+			SavePrefs();
+			CCScene *selectDiff = [CCScene node];
+			if (i) 
 				
-			}
-			else {
-				CCScene *selectDiff = [CCScene node];
-				[selectDiff addChild:[MainMenu node]];
-				[[CCDirector sharedDirector] replaceScene:selectDiff];
-			}
+				[selectDiff addChild:[GameLayer node]];
 			
-
+			else 
+				
+				[selectDiff addChild:[MainMenu node]];
+				
+			clear();
+			[[CCDirector sharedDirector] replaceScene:selectDiff];
+			return;
 		}
 		else {
 			//查询最近的位置，使数字自动落在网格的中间
@@ -442,7 +469,9 @@ void createCorrectMatrix(int difficulty)
 				
 				
 			}
+			
 			SavePrefs();
+			
 			for (i = 0; i < 9; i++) 
 				for (j = 0; j < 9; j++){
 					printf("%d ", gSaveGame.doing[i][j]);
@@ -468,18 +497,20 @@ void createCorrectMatrix(int difficulty)
 	else {
 		//如果按了按钮
 		if ((pointInLeft && i) || (pointInRight && j)) {
-			if (i) {
-				CCScene *selectDiff = [CCScene node];
-				[selectDiff addChild:[GameLayer node]];
-				[[CCDirector sharedDirector] replaceScene:selectDiff];
+			//gSaveGame.gameActive = NO;
+			SavePrefs();
+			CCScene *selectDiff = [CCScene node];
+			if (i) 
 				
-			}
-			else {
-				CCScene *selectDiff = [CCScene node];
+				[selectDiff addChild:[GameLayer node]];
+			
+			else 
+				
 				[selectDiff addChild:[MainMenu node]];
-				[[CCDirector sharedDirector] replaceScene:selectDiff];
-			}
-			aGridisActive = NO;
+			
+			clear();
+			[[CCDirector sharedDirector] replaceScene:selectDiff];
+			
 			
 			
 		}
@@ -593,7 +624,7 @@ void createPositionsInAGrid(CGPoint pos, CGPoint work[3][3])
 
 - (void) dealloc
 {
-	[aGrid release];
+	
 	[super dealloc];
 }
 @end
