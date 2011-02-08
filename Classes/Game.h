@@ -25,4 +25,5 @@ int isInRight(CGPoint point);
 void createNewSodoku();
 void createCorrectMatrix(int difficulty);
 HereGridPosition theRealGridPosition(CGPoint now);
+void createPositionsInAGrid(CGPoint pos, CGPoint work[3][3]);
 @end

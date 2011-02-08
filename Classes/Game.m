@@ -26,7 +26,9 @@ int aGridFlag = 0;
 
 CGPoint everyPoint[9][9];
 CGPoint aGridTemp;
+CGPoint lastGridTemp;
 
+BOOL canSketch = NO;
 CCSprite *work, *aGrid;
 
 extern GameData gSaveGame;
@@ -41,6 +43,7 @@ BOOL aGridisActive = NO;
 - (id) init {
 	
 	if ((self = [super init])) {
+		lastGridTemp = ccp(0,0);
 		
 		Numbers *firstGen = [Numbers node];
 		//Data *gSaveGame = [Game node];
@@ -251,12 +254,14 @@ void createCorrectMatrix(int difficulty)
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	int i, j;
-	aGridTemp = ccp(0,0);
+	
 	
 	if ([touches count] == 2) {
 		aGridisActive = NO;
 		//[self removeChild:aGrid cleanup:YES];
 		
+		canSketch = NO;
+		[aGrid runAction:[CCMoveTo actionWithDuration:0 position:ccp(-100, -100)]];
 		return;
 	}	
 	
@@ -272,12 +277,15 @@ void createCorrectMatrix(int difficulty)
 	pointInLeft = isInLeft(convertedStartPosition);
 	pointInRight= isInRight(convertedStartPosition);
 	
+	
+	
 	if (aGridisActive == YES) {
 		//点了操作用数字？
 		if (convertedStartPosition.y > 431 && convertedStartPosition.y < 466) {
 			Numbers *firstGen = [Numbers node];
 			array = [firstGen createNumbers];
 			theSelectedNumber = convertedStartPosition.x / 35 + 1;
+			canSketch = YES;
 			
 		}
 		
@@ -285,13 +293,19 @@ void createCorrectMatrix(int difficulty)
 				&& convertedStartPosition.y >= 102.5 && convertedStartPosition.y <= 417.5)
 		{
 			inHere = theRealGridPosition(convertedStartPosition);
-			aGridTemp = inHere.here;
+			
+			
+			//aGridisActive = YES;
 			j = (int)((inHere.here.x - 2.5)/35);
 			i = (int)(9 - (inHere.here.y - 102.5)/35);
 			//如果点选的是可以填写的格子
 			if (gSaveGame.correct[i][j]){
 				[aGrid runAction:[CCMoveTo actionWithDuration:0 position:inHere.here]];
+				
+			
+				aGridTemp = inHere.here;
 			}
+			canSketch = NO;
 			
 		}
 	}
@@ -310,12 +324,16 @@ void createCorrectMatrix(int difficulty)
 			[one stopAllActions];
 			//[one runAction:[CCScaleBy actionWithDuration:0 scale:2.0]];
 			work = one;
+			canSketch = NO;
 		}
+		//点的是可填写的空格？
 		else if (convertedStartPosition.x >= 2.5 && convertedStartPosition.x <= 317.5
 				 && convertedStartPosition.y >= 102.5 && convertedStartPosition.y <= 417.5)
 		{
 			inHere = theRealGridPosition(convertedStartPosition);
-			aGridTemp = inHere.here;
+			
+			
+			//aGridTempActive = YES;
 			j = (int)((inHere.here.x - 2.5)/35);
 			i = (int)(9 - (inHere.here.y - 102.5)/35);
 			//如果点选的是可以填写的格子
@@ -329,9 +347,14 @@ void createCorrectMatrix(int difficulty)
 				}
 				else {
 					[aGrid runAction:[CCMoveTo actionWithDuration:0 position:inHere.here]];
+				
 				}
+				aGridTemp = inHere.here;
+				
+				canSketch = NO;
 
 			}
+			aGridisActive = YES;
 		}
 	}
 		
@@ -368,9 +391,11 @@ void createCorrectMatrix(int difficulty)
 	
 	here = theRealGridPosition(finalLocation);
 	
-	if (aGridTemp.x == here.here.x && aGridTemp.y == here.here.y) {
-		aGridisActive = YES;
-	}
+//	if (!(aGridTemp.x == here.here.x && aGridTemp.y == here.here.y)) {
+
+//		aGridisActive = NO;
+
+//	}
 	
 	
 	if (aGridisActive == NO){
@@ -439,7 +464,9 @@ void createCorrectMatrix(int difficulty)
 		
 		}
 	}
+	//aGridisActive == YES情况
 	else {
+		//如果按了按钮
 		if ((pointInLeft && i) || (pointInRight && j)) {
 			if (i) {
 				CCScene *selectDiff = [CCScene node];
@@ -457,14 +484,29 @@ void createCorrectMatrix(int difficulty)
 			
 		}
 		else {
-			CGPoint smallPoints[3][3];
-			createPositionsInAGrid(finalLocation, smallPoints);
-			Numbers *sNumbers = [Numbers node];
-			NSArray *smallNum;
-			smallNum = [sNumbers createSmallNumbers];
-			CCSprite *aSmall = [smallNum objectAtIndex:theSelectedNumber];
-			aSmall.position = smallPoints[theSelectedNumber/3][theSelectedNumber%3 - 1];
-			[self addChild:aSmall z:10];
+			
+				//填写草稿数字
+				CGPoint smallPoints[3][3];
+				
+				//如果可以填写草稿数字，则填写小数字
+				if (canSketch == YES) {
+					
+					createPositionsInAGrid(aGridTemp, smallPoints);
+					Numbers *sNumbers = [Numbers node];
+					NSArray *smallNum;
+					smallNum = [sNumbers createSmallNumbers];
+					CCSprite *aSmall = [smallNum objectAtIndex:theSelectedNumber];
+					aSmall.position = smallPoints[theSelectedNumber/3][theSelectedNumber%3 - 1];
+					//CGPoint sppp = aSmall.position;
+					//CGPoint sttt = aGridTemp;
+					[self addChild:aSmall z:10];
+					//lastGridTemp = aGridTemp;
+					
+				}
+				
+			theSelectedNumber = 0;
+			
+			
 		}
 
 	}
@@ -536,12 +578,13 @@ HereGridPosition theRealGridPosition(CGPoint now)
 void createPositionsInAGrid(CGPoint pos, CGPoint work[3][3])
 {
 	int i, j;
-	HereGridPosition temp;
-	temp = theRealGridPosition(pos);
-	CGPoint zero = temp.here;
+	//HereGridPosition temp;
+	//temp = theRealGridPosition(pos);
+	//temp.here = pos;
+	CGPoint zero = ccp(pos.x-35/2, pos.y+35/2);
 	for (i = 0; i < 3; i++) {
 		for (j = 0; j < 3; j++) {
-			work[i][j] = ccp(zero.y + j * 11.5 / 2, zero.x + i * 11.5 / 2);
+			work[i][j] = ccp(zero.x + j * 11.5 + 11.5/2, zero.y - i * 11.5 - 11.5/2);
 		}
 	}
 	
