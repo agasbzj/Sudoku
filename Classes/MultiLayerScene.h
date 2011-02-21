@@ -1,17 +1,16 @@
 //
-//  MainMenu.h
+//  MultiLayerScene.h
 //  Sokokus
 //
-//  Created by 卞 中杰 on 11-1-25.
+//  Created by 卞 中杰 on 11-2-21.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "LodingScene.h"
+#import "cocos2d.h"
 
-@interface MainMenu : CCLayer {
+@interface MultiLayerScene : CCLayer {
 
 }
 
-+ (id) scene;
 @end

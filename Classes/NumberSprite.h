@@ -11,7 +11,7 @@
 
 @interface NumberSprite : NSObject <CCTargetedTouchDelegate>{
 	CCSprite *numberSprite;
-
+	int numUpdates;
 }
 
 +(id) aNumberWithParentNode:(CCNode *)parentNode;

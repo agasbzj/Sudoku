@@ -1,1 +1,19 @@
 build/*.*
+build/Debug-iphonesimulator/Sokokus.app.dSYM/Contents/Resources/DWARF/Sokokus
+build/Debug-iphonesimulator/Sokokus.app/Sokokus
+build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/NumberSprite.o
+build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Objects-normal/i386/NumberSprite.o~>
+build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/Sokokus.dep
+build/Sokokus.build/Debug-iphonesimulator/Sokokus.build/build-state.dat
+build/Sokokus.build/Debug-iphonesimulator/cocos2d libraries.build/build-state.dat
+build/Sokokus.build/Sokokus.pbxindex/cdecls.pbxbtree
+build/Sokokus.build/Sokokus.pbxindex/decls.pbxbtree
+build/Sokokus.build/Sokokus.pbxindex/files.pbxbtree
+build/Sokokus.build/Sokokus.pbxindex/imports.pbxbtree
+build/Sokokus.build/Sokokus.pbxindex/pbxindex.header
+build/Sokokus.build/Sokokus.pbxindex/protocols.pbxbtree
+build/Sokokus.build/Sokokus.pbxindex/refs.pbxbtree
+build/Sokokus.build/Sokokus.pbxindex/strings.pbxstrings/control
+build/Sokokus.build/Sokokus.pbxindex/strings.pbxstrings/strings
+build/Sokokus.build/Sokokus.pbxindex/subclasses.pbxbtree
+build/Sokokus.build/Sokokus.pbxindex/symbols0.pbxsymbols

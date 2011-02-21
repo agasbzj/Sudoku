@@ -41,8 +41,11 @@ extern GameData gSaveGame;
 	if (gSaveGame.gameActive == YES) {
 		//CCScene *loadGameScene = [CCScene node];
 		//[loadGameScene addChild:[Game node]];
-		CCTransitionPageTurn *turn = [CCTransitionPageTurn transitionWithDuration:1 scene:[Game scene]];
-		[[CCDirector sharedDirector] replaceScene:turn];
+		//CCTransitionPageTurn *turn = [CCTransitionPageTurn transitionWithDuration:1 scene:[Game scene]];
+//		[[CCDirector sharedDirector] replaceScene:turn];
+		
+		LodingScene *load = [LodingScene sceneWithTargetScene:TargetSceneGameScene];
+		[[CCDirector sharedDirector] replaceScene:load];
 	}
 }
 - (void) newGame:(id)sender{

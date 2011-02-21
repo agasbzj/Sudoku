@@ -7,7 +7,7 @@
 //
 
 #import "NumberSprite.h"
-
+#import "CCTouchDispatcher.h"
 
 @implementation NumberSprite
 
@@ -22,14 +22,19 @@
 		CGSize screenSize = [[CCDirector sharedDirector] winSize];
 		
 		numberSprite = [CCSprite spriteWithFile:@"num8c.png"];
-		numberSprite.position = CGPointMake(CCRANDOM_0_1 * screenSize.width,
-											CCRANDOM_0_1 * screenSize.height);
+		numberSprite.position = CGPointMake(CCRANDOM_0_1() * screenSize.width,
+											CCRANDOM_0_1() * screenSize.height);
 		[parentNode addChild:numberSprite z:10];
 		
 		[[CCScheduler sharedScheduler] scheduleUpdateForTarget:self priority:0 paused:NO];
 		
+		[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:-1 swallowsTouches:YES];
+		
 	}
+	return self;
 }
+
+
 
 -(void) update:(ccTime)delta
 {
@@ -38,8 +43,8 @@
 		numUpdates = 0;
 		[numberSprite stopAllActions];
 		
-		CGPoint moveTo = CGPointMake(CCRANDOM_0_1 * 100 - 50, 
-									 CCRANDOM_0_1 * 200 - 100);
+		CGPoint moveTo = CGPointMake(CCRANDOM_0_1() * 100 - 50, 
+									 CCRANDOM_0_1() * 200 - 100);
 		
 		CCMoveBy *move = [CCMoveBy actionWithDuration:1 position:moveTo];
 		[numberSprite runAction:move];
@@ -49,6 +54,19 @@
 -(void) dealloc
 {
 	[[CCScheduler sharedScheduler] unscheduleUpdateForTarget:self];
+	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
+	
 	[super dealloc];
+}
+-(void) moveAway:(float)duration position:(CGPoint)moveTo
+{
+	[numberSprite stopAllActions];
+	CCMoveBy *move = [CCMoveBy actionWithDuration:duration position:moveTo];
+	[numberSprite runAction:move];
+}
+-(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	
+	
 }
 @end
