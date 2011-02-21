@@ -6,8 +6,6 @@
 //  Copyright __MyCompanyName__ 2011. All rights reserved.
 //
 
-#import "cocos2d.h"
-
 #import "SokokusAppDelegate.h"
 #import "GameConfig.h"
 #import "MainMenu.h"
@@ -94,7 +92,7 @@ extern GameData gSaveGame;
 #else
 	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
 #endif
-	
+	//[director setAnimationInterval:1.0/124];
 	[director setAnimationInterval:1.0/60];
 	[director setDisplayFPS:YES];
 	
@@ -117,6 +115,7 @@ extern GameData gSaveGame;
 	[self removeStartupFlicker];
 	
 	LoadPrefs();
+	
 	[glView setMultipleTouchEnabled:YES];
 	// Run the intro Scene
 	[[CCDirector sharedDirector] runWithScene: [MainMenu scene]];		

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "cocos2d.h"
+
 #import "Numbers.h"
 
 typedef struct{
@@ -18,6 +18,7 @@ typedef struct{
 @interface Game : CCLayer {
 
 }
++ (id) scene;
 
 BOOL checkThemAll(int user[9][9], int right[9][9]);
 int isInLeft(CGPoint point);

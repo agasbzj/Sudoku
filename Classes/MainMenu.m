@@ -37,12 +37,41 @@ extern GameData gSaveGame;
 	return scene;
 }
 
+- (void) loadGame:(id)sender{
+	if (gSaveGame.gameActive == YES) {
+		//CCScene *loadGameScene = [CCScene node];
+		//[loadGameScene addChild:[Game node]];
+		CCTransitionPageTurn *turn = [CCTransitionPageTurn transitionWithDuration:1 scene:[Game scene]];
+		[[CCDirector sharedDirector] replaceScene:turn];
+	}
+}
+- (void) newGame:(id)sender{
+	//gSaveGame.gameActive = NO;
+	//CCScene *newGameScene = [CCScene node];
+	//[newGameScene addChild:[GameLayer node]];
+	
+	//切换效果
+	CCTransitionFade *fade = [CCTransitionFade transitionWithDuration:0.5 scene:[GameLayer scene] withColor:ccWHITE];
+	
+	[[CCDirector sharedDirector] replaceScene:fade];
+}
+
+- (void) gameSettings:(id)sender{
+	NSLog(@"Settings");
+}
+
+- (void) quitGame:(id) sender{
+	NSLog(@"Quit!");
+}
+
+
 // on "init" you need to initialize your instance
 -(id) init
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init] )) {
+		//[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"blues.mp3" loop:YES];
 		CCSprite *menuBackground = [CCSprite spriteWithFile:@"menuView.png"];
 		menuBackground.anchorPoint = CGPointZero;
 		
@@ -50,6 +79,7 @@ extern GameData gSaveGame;
 		
 		[CCMenuItemFont setFontName:@"Heiti TC"];
 		[CCMenuItemFont setFontSize:25];
+		
 		
 		CCMenuItem *newGame = [CCMenuItemFont itemFromString:@"新游戏" target:self selector:@selector(newGame:)];
 		CCMenuItem *loadGame = [CCMenuItemFont itemFromString:@"读取游戏" target:self selector:@selector(loadGame:)];
@@ -65,27 +95,7 @@ extern GameData gSaveGame;
 	return self;
 }
 
-- (void) loadGame:(id)sender{
-	if (gSaveGame.gameActive == YES) {
-		CCScene *loadGameScene = [CCScene node];
-		[loadGameScene addChild:[Game node]];
-		[[CCDirector sharedDirector] replaceScene:loadGameScene];
-	}
-}
-- (void) newGame:(id)sender{
-	gSaveGame.gameActive = NO;
-	CCScene *newGameScene = [CCScene node];
-	[newGameScene addChild:[GameLayer node]];
-	[[CCDirector sharedDirector] replaceScene:newGameScene];
-}
 
-- (void) gameSettings:(id)sender{
-	NSLog(@"Settings");
-}
-
-- (void) quitGame:(id) sender{
-	NSLog(@"Quit!");
-}
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
@@ -94,6 +104,7 @@ extern GameData gSaveGame;
 	// cocos2d will automatically release all the children (Label)
 	
 	// don't forget to call "super dealloc"
+	CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
 	[super dealloc];
 }
 

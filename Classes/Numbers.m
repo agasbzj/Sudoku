@@ -16,10 +16,10 @@
 @synthesize temp1;
 @synthesize controlNumbers;
 @synthesize smallNumbers;
-- (NSMutableArray *) createNumbers
+- (CCArray *) createNumbers
 {
 	NSArray *temp;
-	NSMutableArray *numbers = [NSMutableArray arrayWithCapacity:3];
+	CCArray *numbers = [CCArray arrayWithCapacity:3];
 		
 	
 	CCSprite *num1 = [CCSprite spriteWithFile:@"num1a.png"];
@@ -87,9 +87,9 @@
 -(id) init
 {
 	int i;
-	grayNumbers = [NSMutableArray arrayWithCapacity:9];
-	greenNumbers = [NSMutableArray arrayWithCapacity:9];
-	redNumbers = [NSMutableArray arrayWithCapacity:9];
+	grayNumbers = [CCArray arrayWithCapacity:9];
+	greenNumbers = [CCArray arrayWithCapacity:9];
+	redNumbers = [CCArray arrayWithCapacity:9];
 	
 	if ((self = [super init])) {
 		//加载灰色数字		
@@ -151,6 +151,12 @@
 	}
 	
 	return self;
+}
+
+- (void) dealloc
+{
+	CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
+	[super dealloc];
 }
 
 @end

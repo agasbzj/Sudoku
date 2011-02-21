@@ -16,6 +16,36 @@
 
 extern GameData gSaveGame;
 
+- (void) startGameLevel1:(id)sender{
+	//NSLog(@"Level1");
+	gSaveGame.difficulty = 1;	//游戏难度
+	//CCScene *level1 = [CCScene node];
+	//[level1 addChild:[Game node]];
+	[[CCDirector sharedDirector] replaceScene:[Game scene]];
+}
+
+- (void) backToMainTitle:(id)sender{
+	//CCScene *mainTitleScene = [CCScene node];
+	//[mainTitleScene addChild:[MainMenu node]];
+	[[CCDirector sharedDirector] replaceScene:[MainMenu scene]];
+}
+
++(id) scene
+{
+	// 'scene' is an autorelease object.
+	CCScene *scene = [CCScene node];
+	
+	// 'layer' is an autorelease object.
+	GameLayer *layer = [GameLayer node];
+	
+	// add layer as a child to scene
+	[scene addChild: layer];
+	
+	// return the scene
+	return scene;
+}
+
+
 - (id) init{
 
 	if ((self = [super init])) {
@@ -48,20 +78,8 @@ extern GameData gSaveGame;
 	return self;
 }
 
-- (void) startGameLevel1:(id)sender{
-	//NSLog(@"Level1");
-	gSaveGame.difficulty = 1;	//游戏难度
-	CCScene *level1 = [CCScene node];
-	[level1 addChild:[Game node]];
-	[[CCDirector sharedDirector] replaceScene:level1];
-}
-
-- (void) backToMainTitle:(id)sender{
-	CCScene *mainTitleScene = [CCScene node];
-	[mainTitleScene addChild:[MainMenu node]];
-	[[CCDirector sharedDirector] replaceScene:mainTitleScene];
-}
 - (void)dealloc{
+	CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
 	[super dealloc];
 }
 @end

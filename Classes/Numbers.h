@@ -7,23 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "cocos2d.h"
+
 
 @interface Numbers : CCLayer {
-	NSMutableArray *grayNumbers;
-	NSMutableArray *greenNumbers;
-	NSMutableArray *redNumbers;
+	CCArray *grayNumbers;
+	CCArray *greenNumbers;
+	CCArray *redNumbers;
 	NSArray *temp1;
-	NSMutableArray *controlNumbers;
+	CCArray *controlNumbers;
 	NSArray *smallNumbers;
 }
-@property (nonatomic, retain) NSMutableArray *grayNumbers;
-@property (nonatomic, retain) NSMutableArray *greenNumbers;
-@property (nonatomic, retain) NSMutableArray *redNumbers;
-@property (nonatomic, retain) NSMutableArray *controlNumbers;
+@property (nonatomic, retain) CCArray *grayNumbers;
+@property (nonatomic, retain) CCArray *greenNumbers;
+@property (nonatomic, retain) CCArray *redNumbers;
+@property (nonatomic, retain) CCArray *controlNumbers;
 @property (nonatomic, retain) NSArray *temp1;
 @property (nonatomic, retain) NSArray *smallNumbers;
 
-- (NSMutableArray *) createNumbers;
+- (CCArray *) createNumbers;
 - (NSArray *) createSmallNumbers;
 @end

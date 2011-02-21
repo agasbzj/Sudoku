@@ -55,6 +55,20 @@ void clear()
 	aGrid = nil;
 }
 
++(id) scene
+{
+	// 'scene' is an autorelease object.
+	CCScene *scene = [CCScene node];
+	
+	// 'layer' is an autorelease object.
+	Game *layer = [Game node];
+	
+	// add layer as a child to scene
+	[scene addChild: layer];
+	
+	// return the scene
+	return scene;
+}
 
 - (id) init {
 	
@@ -63,22 +77,26 @@ void clear()
 		aGridisActive = NO;
 		lastGridTemp = ccp(0,0);
 		
+		
+		
 		Numbers *firstGen = [Numbers node];
 		//Data *gSaveGame = [Game node];
 		
 		self.isTouchEnabled = YES;
+		
 		int i = 0, j = 0;
 		int x = 0, y = 0;
-		NSMutableArray *array;
+		CCArray *array;
 		CGPoint tempPosition;
-		
+		/*
+		 打印保存的玩家填写数据
 		for (i = 0; i < 9; i++) 
 			for (j = 0; j < 9; j++){
 				printf("%d ", gSaveGame.doing[i][j]);
 				if (j == 8) 
 					printf("\n");
 			}
-		
+		*/
 		if (gSaveGame.gameActive == NO) {
 			createNewSodoku();
 			createCorrectMatrix(gSaveGame.difficulty);
@@ -116,12 +134,12 @@ void clear()
 		*/
 	
 //加载背景图案	
-		/*
+		
 		CCSprite *gameBack = [CCSprite spriteWithFile:@"gameBack.png"];
 		//gameBack.anchorPoint = CGPointZero;
 		gameBack.position = ccp(160, 240);
 		[self addChild:gameBack z:-100];
-		 */
+		 
 //加载网格		
 		CCSprite *gameGrid = [CCSprite spriteWithFile:@"gridStyle2.png"];
 		gameGrid.positionInPixels = ccp(320, 520);
@@ -165,10 +183,12 @@ void clear()
 		loseButton.positionInPixels = ccp(480, 102);
 		[self addChild:loseButton z:0 tag:14];
 		
-		
+		//CCArray
+			
 	}
 	return self;
 }
+
 
 #pragma mark -
 #pragma mark Create Sodokus
@@ -285,7 +305,7 @@ void createCorrectMatrix(int difficulty)
 	
 	//CGPoint inHere = CGPointMake(320, 480);
 	HereGridPosition inHere;
-	NSMutableArray *array;
+	CCArray *array;
 	UITouch *touch = [touches anyObject];
 	
 	CGPoint startPositon = [touch locationInView:[touch view]];
@@ -310,7 +330,7 @@ void createCorrectMatrix(int difficulty)
 			canSketch = YES;
 			
 		}
-		
+		//在网格范围内？
 		else if(convertedStartPosition.x >= 2.5 && convertedStartPosition.x <= 317.5
 				&& convertedStartPosition.y >= 102.5 && convertedStartPosition.y <= 417.5)
 		{
@@ -322,7 +342,11 @@ void createCorrectMatrix(int difficulty)
 			i = (int)(9 - (inHere.here.y - 102.5)/35);
 			//如果点选的是可以填写的格子
 			if (gSaveGame.correct[i][j]){
-				[aGrid runAction:[CCMoveTo actionWithDuration:0 position:inHere.here]];
+				//CCMoveTo *move = [CCMoveTo actionWithDuration:0 position:inHere.here];
+				
+				//[aGrid runAction:move];
+				
+				aGrid.position = inHere.here;
 				
 			
 				aGridTemp = inHere.here;
@@ -368,7 +392,8 @@ void createCorrectMatrix(int difficulty)
 					aGridFlag = 1;
 				}
 				else {
-					[aGrid runAction:[CCMoveTo actionWithDuration:0 position:inHere.here]];
+					aGrid.position = inHere.here;
+					//[aGrid runAction:[CCMoveTo actionWithDuration:0 position:inHere.here]];
 				
 				}
 				aGridTemp = inHere.here;
@@ -392,7 +417,9 @@ void createCorrectMatrix(int difficulty)
 		return;
 	}
 	else if (work) {
-		[work runAction:[CCMoveTo actionWithDuration:0 position:convertedPosition]];
+		CGPoint point = ccp(convertedPosition.x, convertedPosition.y);
+		work.position = point;
+		//[work runAction:[CCMoveTo actionWithDuration:0 position:convertedPosition]];
 	}
 	
 	
@@ -437,6 +464,7 @@ void createCorrectMatrix(int difficulty)
 			else 
 				
 				[selectDiff addChild:[MainMenu node]];
+				//[selectDiff addChild:returnToMain()];
 				
 			clear();
 			[[CCDirector sharedDirector] replaceScene:selectDiff];
@@ -471,16 +499,17 @@ void createCorrectMatrix(int difficulty)
 			}
 			
 			SavePrefs();
-			
+			/*
 			for (i = 0; i < 9; i++) 
 				for (j = 0; j < 9; j++){
 					printf("%d ", gSaveGame.doing[i][j]);
 					if (j == 8) 
 						printf("\n");
 				}
+			 */
 			//如果玩家填的数字全部正确，则执行
 			if (checkThemAll(gSaveGame.doing, gSaveGame.correct)) {
-				NSLog(@"win");
+				CCLOG(@"win");
 				gSaveGame.gameActive = NO;
 				CCSprite *win = [CCSprite spriteWithFile:@"gaoding.png"];
 				win.positionInPixels = ccp(320, 480);
@@ -624,7 +653,7 @@ void createPositionsInAGrid(CGPoint pos, CGPoint work[3][3])
 
 - (void) dealloc
 {
-	
+	CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
 	[super dealloc];
 }
 @end
