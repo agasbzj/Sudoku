@@ -49,6 +49,7 @@ extern GameData gSaveGame;
 - (id) init{
 
 	if ((self = [super init])) {
+		CGSize screenSize = [[CCDirector sharedDirector] winSize];
 		CCSprite *gameBackground = [CCSprite spriteWithFile:@"gameBackground.png"];
 		gameBackground.anchorPoint = CGPointZero;
 		[self addChild:gameBackground z:0 tag:1];
@@ -56,20 +57,26 @@ extern GameData gSaveGame;
 		[CCMenuItemFont setFontName:@"Heiti TC"];
 		
 		[CCMenuItemFont setFontSize:40];
-		CCMenuItem *title = [CCMenuItemFont itemFromString:@"请选择难度：" target:self selector:nil];
-		[title setIsEnabled:NO];
-		
+		//CCMenuItem *title = [CCMenuItemFont itemFromString:@"请选择难度" target:self selector:nil];
+//		[title setIsEnabled:NO];
+		CCLabelTTF *title = [CCLabelTTF labelWithString:@"请选择难度" fontName:@"Heiti SC" fontSize:40];
+		title.position = ccp(screenSize.width*0.5, screenSize.height*0.7);
+		[self addChild:title];
+					
 		
 				
 		[CCMenuItemFont setFontSize:25];
 		CCMenuItem *level1 = [CCMenuItemFont itemFromString:@"等级一" target:self selector:@selector(startGameLevel1:)];
 		CCMenuItem *backToMain = [CCMenuItemFont itemFromString:@"回主菜单" target:self selector:@selector(backToMainTitle:)];
 		
-		CCMenu *selectDifficultyMenu = [CCMenu menuWithItems:title, level1, backToMain, nil];
-		selectDifficultyMenu.anchorPoint = ccp(0,0);
-		title.position = ccp(20, 100);
-		level1.position = ccp(0, 0);
-		backToMain.position = ccp(0, -100);
+		CCMenu *selectDifficultyMenu = [CCMenu menuWithItems: level1, backToMain, nil];
+		
+		
+		selectDifficultyMenu.anchorPoint = CGPointZero;
+		selectDifficultyMenu.position = CGPointZero;
+		//title.position = ccp(screenSize.width*0.5, screenSize.height*0.7);
+		level1.position = ccp(screenSize.width*0.5, screenSize.height*0.4);
+		backToMain.position = ccp(screenSize.width*0.5, screenSize.height*0.2);
 		//[selectDifficultyMenu alignItemsVertically];
 		
 		[self addChild:selectDifficultyMenu z:1 tag:2];

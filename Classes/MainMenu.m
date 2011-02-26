@@ -17,10 +17,12 @@
 #import "GameLayer.h"
 #import "GameData.h"
 #import "Game.h"
+#import "AnimationNumber.h"
 // MainMenu implementation
 @implementation MainMenu
 
 extern GameData gSaveGame;
+
 
 +(id) scene
 {
@@ -68,12 +70,16 @@ extern GameData gSaveGame;
 }
 
 
+
 // on "init" you need to initialize your instance
 -(id) init
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
+	
 	if( (self=[super init] )) {
+		
+				
 		//[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"blues.mp3" loop:YES];
 		CCSprite *menuBackground = [CCSprite spriteWithFile:@"menuView.png"];
 		menuBackground.anchorPoint = CGPointZero;
@@ -91,8 +97,13 @@ extern GameData gSaveGame;
 		
 		CCMenu *mainMenu = [CCMenu menuWithItems:newGame, loadGame, gameSettings, quitGame, nil];
 		[mainMenu alignItemsVertically];
-		mainMenu.position = ccp(160, 100);
+		CGSize screenSize = [[CCDirector sharedDirector] winSize];
+		mainMenu.position = ccp(screenSize.width * 0.5, screenSize.height * 0.2);
 		[self addChild:mainMenu z:1 tag:2];
+		
+		AnimationNumber *num = [AnimationNumber Gen];
+		num.position = ccp(screenSize.width*0.5, screenSize.height*0.5);
+		[self addChild:num z:1];
 		
 	}
 	return self;

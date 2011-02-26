@@ -63,6 +63,9 @@
 		50F41343106926B2002A0D5E /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F41323106926B2002A0D5E /* CJSONSerializer.m */; };
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
+		A9089FEE1317FEB3009692FB /* AnimationNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A9089FED1317FEB3009692FB /* AnimationNumber.m */; };
+		A93E83F01318E3F400B83B54 /* Num.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93E83EE1318E3F400B83B54 /* Num.plist */; };
+		A93E83F11318E3F400B83B54 /* Num.png in Resources */ = {isa = PBXBuildFile; fileRef = A93E83EF1318E3F400B83B54 /* Num.png */; };
 		A9692F06131156080030083B /* NumberSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = A9692F05131156080030083B /* NumberSprite.m */; };
 		A97EC52F130C18D40099986A /* blues.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A97EC52E130C18D40099986A /* blues.mp3 */; };
 		A9ED7C4C1312B9110093A2E8 /* MultiLayerScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ED7C4B1312B9110093A2E8 /* MultiLayerScene.m */; };
@@ -374,6 +377,10 @@
 		50F414ED1069373D002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F414EE1069373D002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9089FEC1317FEB3009692FB /* AnimationNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationNumber.h; sourceTree = "<group>"; };
+		A9089FED1317FEB3009692FB /* AnimationNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationNumber.m; sourceTree = "<group>"; };
+		A93E83EE1318E3F400B83B54 /* Num.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Num.plist; sourceTree = "<group>"; };
+		A93E83EF1318E3F400B83B54 /* Num.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Num.png; sourceTree = "<group>"; };
 		A9692F04131156080030083B /* NumberSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberSprite.h; sourceTree = "<group>"; };
 		A9692F05131156080030083B /* NumberSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberSprite.m; sourceTree = "<group>"; };
 		A97EC52E130C18D40099986A /* blues.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blues.mp3; sourceTree = "<group>"; };
@@ -737,6 +744,8 @@
 				A9692F05131156080030083B /* NumberSprite.m */,
 				A9ED7C4A1312B9110093A2E8 /* MultiLayerScene.h */,
 				A9ED7C4B1312B9110093A2E8 /* MultiLayerScene.m */,
+				A9089FEC1317FEB3009692FB /* AnimationNumber.h */,
+				A9089FED1317FEB3009692FB /* AnimationNumber.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -846,6 +855,7 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A9089F851317F2A5009692FB /* Sprite_Atlas */,
 				A97EC52D130C18CC0099986A /* Sounds */,
 				C9162D3313003129002E3C28 /* Small_Numbers */,
 				C9AB6A1612F3F93B00986BBF /* gaoding.png */,
@@ -876,6 +886,15 @@
 				50F414EF1069373D002A0D5E /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		A9089F851317F2A5009692FB /* Sprite_Atlas */ = {
+			isa = PBXGroup;
+			children = (
+				A93E83EE1318E3F400B83B54 /* Num.plist */,
+				A93E83EF1318E3F400B83B54 /* Num.png */,
+			);
+			name = Sprite_Atlas;
 			sourceTree = "<group>";
 		};
 		A97EC52D130C18CC0099986A /* Sounds */ = {
@@ -1396,6 +1415,8 @@
 				C9162D4E13003139002E3C28 /* num8s.png in Resources */,
 				C9162D4F13003139002E3C28 /* num9s.png in Resources */,
 				A97EC52F130C18D40099986A /* blues.mp3 in Resources */,
+				A93E83F01318E3F400B83B54 /* Num.plist in Resources */,
+				A93E83F11318E3F400B83B54 /* Num.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1417,6 +1438,7 @@
 				A9692F06131156080030083B /* NumberSprite.m in Sources */,
 				A9ED7C4C1312B9110093A2E8 /* MultiLayerScene.m in Sources */,
 				A9ED7C731312BF6E0093A2E8 /* LodingScene.m in Sources */,
+				A9089FEE1317FEB3009692FB /* AnimationNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
