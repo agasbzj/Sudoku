@@ -79,12 +79,13 @@ extern GameData gSaveGame;
 	
 	if( (self=[super init] )) {
 		
-				
+        //音乐加载
 		//[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"blues.mp3" loop:YES];
-		CCSprite *menuBackground = [CCSprite spriteWithFile:@"menuView.png"];
-		menuBackground.anchorPoint = CGPointZero;
-		
-		[self addChild:menuBackground z:0 tag:1];
+        
+        //主菜单背景图加载
+//		CCSprite *menuBackground = [CCSprite spriteWithFile:@"menuView.png"];
+//		menuBackground.anchorPoint = CGPointZero;
+//		[self addChild:menuBackground z:0 tag:1];
 		
 		[CCMenuItemFont setFontName:@"Heiti TC"];
 		[CCMenuItemFont setFontSize:25];
