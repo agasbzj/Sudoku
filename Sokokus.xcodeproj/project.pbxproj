@@ -68,6 +68,7 @@
 		A93E83F11318E3F400B83B54 /* Num.png in Resources */ = {isa = PBXBuildFile; fileRef = A93E83EF1318E3F400B83B54 /* Num.png */; };
 		A9692F06131156080030083B /* NumberSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = A9692F05131156080030083B /* NumberSprite.m */; };
 		A97EC52F130C18D40099986A /* blues.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A97EC52E130C18D40099986A /* blues.mp3 */; };
+		A9AC61D6131A345700A563BD /* CCAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AC61D5131A345700A563BD /* CCAnimationHelper.m */; };
 		A9ED7C4C1312B9110093A2E8 /* MultiLayerScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ED7C4B1312B9110093A2E8 /* MultiLayerScene.m */; };
 		A9ED7C731312BF6E0093A2E8 /* LodingScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ED7C721312BF6E0093A2E8 /* LodingScene.m */; };
 		C913A86512FEFBBE007FB047 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C913A86412FEFBBE007FB047 /* Default.png */; };
@@ -384,6 +385,8 @@
 		A9692F04131156080030083B /* NumberSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberSprite.h; sourceTree = "<group>"; };
 		A9692F05131156080030083B /* NumberSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberSprite.m; sourceTree = "<group>"; };
 		A97EC52E130C18D40099986A /* blues.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blues.mp3; sourceTree = "<group>"; };
+		A9AC61D4131A345700A563BD /* CCAnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnimationHelper.h; sourceTree = "<group>"; };
+		A9AC61D5131A345700A563BD /* CCAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnimationHelper.m; sourceTree = "<group>"; };
 		A9ED7C4A1312B9110093A2E8 /* MultiLayerScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiLayerScene.h; sourceTree = "<group>"; };
 		A9ED7C4B1312B9110093A2E8 /* MultiLayerScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiLayerScene.m; sourceTree = "<group>"; };
 		A9ED7C711312BF6E0093A2E8 /* LodingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LodingScene.h; sourceTree = "<group>"; };
@@ -746,6 +749,8 @@
 				A9ED7C4B1312B9110093A2E8 /* MultiLayerScene.m */,
 				A9089FEC1317FEB3009692FB /* AnimationNumber.h */,
 				A9089FED1317FEB3009692FB /* AnimationNumber.m */,
+				A9AC61D4131A345700A563BD /* CCAnimationHelper.h */,
+				A9AC61D5131A345700A563BD /* CCAnimationHelper.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1439,6 +1444,7 @@
 				A9ED7C4C1312B9110093A2E8 /* MultiLayerScene.m in Sources */,
 				A9ED7C731312BF6E0093A2E8 /* LodingScene.m in Sources */,
 				A9089FEE1317FEB3009692FB /* AnimationNumber.m in Sources */,
+				A9AC61D6131A345700A563BD /* CCAnimationHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1648,7 +1654,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
@@ -1670,7 +1676,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

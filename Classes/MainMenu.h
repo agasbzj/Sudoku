@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LodingScene.h"
 
+
 @interface MainMenu : CCLayer {
 
 }

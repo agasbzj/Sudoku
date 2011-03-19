@@ -21,10 +21,10 @@
 	if ((self = [super init])) {
 		CGSize screenSize = [[CCDirector sharedDirector] winSize];
 		
-		numberSprite = [CCSprite spriteWithFile:@"num8c.png"];
-		numberSprite.position = CGPointMake(CCRANDOM_0_1() * screenSize.width,
+		_numberSprite = [CCSprite spriteWithFile:@"num8c.png"];
+		_numberSprite.position = CGPointMake(CCRANDOM_0_1() * screenSize.width,
 											CCRANDOM_0_1() * screenSize.height);
-		[parentNode addChild:numberSprite z:10];
+		[parentNode addChild:_numberSprite z:10];
 		
 		[[CCScheduler sharedScheduler] scheduleUpdateForTarget:self priority:0 paused:NO];
 		
@@ -38,16 +38,16 @@
 
 -(void) update:(ccTime)delta
 {
-	numUpdates++;
-	if (numUpdates > 50) {
-		numUpdates = 0;
-		[numberSprite stopAllActions];
+	_numUpdates++;
+	if (_numUpdates > 50) {
+		_numUpdates = 0;
+		[_numberSprite stopAllActions];
 		
 		CGPoint moveTo = CGPointMake(CCRANDOM_0_1() * 100 - 50, 
 									 CCRANDOM_0_1() * 200 - 100);
 		
 		CCMoveBy *move = [CCMoveBy actionWithDuration:1 position:moveTo];
-		[numberSprite runAction:move];
+		[_numberSprite runAction:move];
 	}
 }
 
@@ -60,9 +60,9 @@
 }
 -(void) moveAway:(float)duration position:(CGPoint)moveTo
 {
-	[numberSprite stopAllActions];
+	[_numberSprite stopAllActions];
 	CCMoveBy *move = [CCMoveBy actionWithDuration:duration position:moveTo];
-	[numberSprite runAction:move];
+	[_numberSprite runAction:move];
 }
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {

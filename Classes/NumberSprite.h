@@ -10,8 +10,8 @@
 #import "Numbers.h"
 
 @interface NumberSprite : NSObject <CCTargetedTouchDelegate>{
-	CCSprite *numberSprite;
-	int numUpdates;
+	CCSprite *_numberSprite;
+	int _numUpdates;
 }
 
 +(id) aNumberWithParentNode:(CCNode *)parentNode;

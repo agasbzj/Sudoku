@@ -18,6 +18,8 @@
 #import "GameData.h"
 #import "Game.h"
 #import "AnimationNumber.h"
+#import "CCAnimationHelper.h"
+
 // MainMenu implementation
 @implementation MainMenu
 
@@ -102,9 +104,20 @@ extern GameData gSaveGame;
 		mainMenu.position = ccp(screenSize.width * 0.5, screenSize.height * 0.2);
 		[self addChild:mainMenu z:1 tag:2];
 		
+        //添加一个动画Sprite
 		AnimationNumber *num = [AnimationNumber Gen];
 		num.position = ccp(screenSize.width*0.5, screenSize.height*0.5);
 		[self addChild:num z:1];
+        
+        //添加另一个动画，使用CCAnimationHelper
+        CCSprite *a2 = [CCSprite node];
+        CCAnimation *anim2 = [CCAnimation animationWithFrame:@"num" frameCount:9 delay:0.05f];
+        CCAnimate *animt2 = [CCAnimate actionWithAnimation:anim2];
+        CCRepeatForever *re2 = [CCRepeatForever actionWithAction:animt2];
+        [a2 runAction:re2];
+        a2.position = ccp(screenSize.width*0.75, screenSize.height*0.75);
+        [self addChild:a2];
+        
 		
 	}
 	return self;
